@@ -8,5 +8,5 @@ CREATE TABLE IF NOT EXISTS reservations(
 	made_time BIGINT NOT NULL,
 	reserve_date TEXT NOT NULL,
 	reserve_time INTEGER NOT NULL,
-	seats INTEGER NOT NULL,
+	seats INTEGER NOT NULL
 );
