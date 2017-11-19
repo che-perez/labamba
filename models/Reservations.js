@@ -17,6 +17,15 @@ Reservations.findById = (id) => {
 	);
 };
 
+Reservations.findByEmail = (email) => {
+	return db.query(
+		`SELECT * FROM reservations
+		WHERE email = $1
+		ORDER BY reserve_date ASC`,
+		[email]
+	);
+};
+
 Reservations.create = (reservation) => {
 	return db.one(
 		`INSERT INTO reservations (first_name, last_name, email, telephone, made_time, reserve_date, reserve_time, seats)

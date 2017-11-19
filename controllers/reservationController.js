@@ -51,6 +51,18 @@ reservationController.show = (req, res) => {
 		});
   };
   
+reservationController.find = (req, res) => {
+	Reservation.findByEmail(req.params.email)
+		.then(reservation => {
+			res.json({
+				message: 'ok',
+				data: { reservation, },
+			});
+		}).catch(err => {
+			res.status(400).json({message: '400',err});
+		});
+  };
+  
   reservationController.update = (req, res) => {
     Reservation.update({
 	  first_name: req.body.first_name,
