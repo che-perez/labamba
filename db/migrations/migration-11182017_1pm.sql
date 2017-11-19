@@ -3,9 +3,9 @@ CREATE TABLE IF NOT EXISTS reservations(
 	first_name VARCHAR(255) NOT NULL,
 	last_name VARCHAR(255) NOT NULL,
 	email VARCHAR(255) NOT NULL,
-	telephone NUMBER,
-	made_time BIGINIT NOT NULL,
+	telephone INTEGER,
+	made_time BIGINT NOT NULL,
 	reserve_date TEXT NOT NULL,
-	rserve_time NUMBER NOT NULL,
-	seats NUMBER NOT NULL,
-)
+	rserve_time INTEGER NOT NULL,
+	seats INTEGER NOT NULL
+);

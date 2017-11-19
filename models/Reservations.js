@@ -1,11 +1,10 @@
 const db = require('../db/config');
 
-const Reservations {};
+const Reservations = {};
 
 Reservations.findAll = () => {
 	return db.query(
-		`SELECT * FROM reservations 
-		WHERE email = $1 
+		`SELECT * FROM reservations
 		ORDER BY reserve_date ASC`
 	);
 };
