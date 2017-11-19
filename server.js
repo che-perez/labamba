@@ -13,12 +13,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.listen(PORT, () => {
-  console.log(`Knock Knock ${PORT}`);
+  console.log(`Bailando La Bamba en ${PORT}`);
 });
 
 // This will be changed to whatever we creates the routes.
-const routes = require('/routes/routes');
-app.use('/api/routes', routes);
+const reservationsRoutes = require('./routes/reservationRoutes');
+app.use('/api/reservations', reservationsRoutes);
 
 app.use('*', (req, res) => {
   res.status(404).send('Not Found');

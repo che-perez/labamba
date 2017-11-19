@@ -1,65 +1,86 @@
-const Reservation = require('../models/labamba')
+const Reservation = require('../models/Reservations')
 
 const reservationController = {}
 
 reservationController.index = (req, res) => {
     // console.log('showing index')
-    Reservation.findAll().then((labamba)) => {
-      console.log(labamba)
-      res.render('labamba/labamba-index', {
-        data: xxxxx,
-      })
-    }).catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-  };
-  reservationController.create = (req, res) => {
+    Reservation.findAll()
+    	.then(reservations => {
+	    	res.json({
+		    	message: 'ok',
+		    	data: { reservations },
+	    	});
+    	}).catch(err => {
+	    	console.log(err);
+	    	res.status(400).json({message: '400', err});
+    	});
+    };
+
+reservationController.create = (req, res) => {
     Reservation.create({
-      firstname: req.body.firstname
-      lastname:  req.body.lastname
-      email:     req.body.email
-      telephone: req.body.telephone
-      date:      req.body.date
-      time:      req.body.time
-    }).then((labamba) => {
-      res.send(labamba)
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      telephone: req.body.telephone,
+      made_time: Date.now(),
+      reserve_date: req.body.reserve_date,
+      reserve_time: req.body.reserve_time,
+      seats: req.body.seats,
+    }).then(reservation => {
+      res.json({
+	      message: 'ok',
+	      data: { reservation }
+      });
     }).catch(err=>{
       console.log(err)
-      res.status(500).json(err)
-    })
-  }
-  reservationController.show = (req, res) => {
-    Reservation.findById(req.params.id)
-    .then((labamba) => {
-      res.render('labamba/labamba-single', {
-        data: res
-      })
-    }).catch(err => {
-      console.log(err)
-      res.status(500).json(err)
-    })
-  }
+      res.status(400).json({
+	      message: '400', err
+      });
+    });
+  };
+  
+reservationController.show = (req, res) => {
+	Reservation.findById(req.params.id)
+		.then(reservation => {
+			res.json({
+				message: 'ok',
+				data: { reservation, },
+			});
+		}).catch(err => {
+			res.status(400).json({message: '400',err});
+		});
+  };
+  
   reservationController.update = (req, res) => {
-    Monofogo.update(
-       [req.body.firstname
-       req.body.lastname
-       req.body.email
-       req.body.telephone
-       req.body.date
-       req.body.time])
-    .then((labamba) => {
-      res.redirect('back')
+    Reservation.update({
+	  first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      telephone: req.body.telephone,
+      made_time: Date.now(),
+      reserve_date: req.body.reserve_date,
+      reserve_time: req.body.reserve_time,
+      seats: req.body.seats,
+    }, req.params.id)
+      .then(reservation => {
+	      res.json({
+		      message: 'ok',
+		      data: { reservation },
+	      });
+      }).catch(err => {
+	      console.log(err);
+	      res.status(400).json(err);
+      });
+  };
+  
+reservationController.destroy = (req,res) => {
+    Reservation.destroy(req.params.id)
+    .then(() => {
+	    res.json({ message: 'reservation deleted' });
     }).catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-      })
-  }
-  reservationController.delete = (req,res) => {
-    Reservation.delete(req.params.id).then(
-      res.redirect('/labamba')).catch(err => {
-        console.log(err)
-        res.status(500).json(err)
-      })
-  }
-module.exports = reservationController
+	    console.log(err);
+	    res.status(400).json(err);
+    });
+  };
+  
+module.exports = reservationController;
