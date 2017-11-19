@@ -5,7 +5,7 @@ const reservationController = {}
 reservationController.index = (req, res) => {
     // console.log('showing index')
     Reservation.findAll()
-    	.then(reservation => {
+    	.then(reservations => {
 	    	res.json({
 		    	message: 'ok',
 		    	data: { reservations },
@@ -18,13 +18,13 @@ reservationController.index = (req, res) => {
 
 reservationController.create = (req, res) => {
     Reservation.create({
-      first_name: req.body.firstname,
-      last_name: req.body.lastname,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
       email: req.body.email,
       telephone: req.body.telephone,
       made_time: Date.now(),
-      reserve_date: req.body.reservedate,
-      reserve_time: req.body.reservetime,
+      reserve_date: req.body.reserve_date,
+      reserve_time: req.body.reserve_time,
       seats: req.body.seats,
     }).then(reservation => {
       res.json({
