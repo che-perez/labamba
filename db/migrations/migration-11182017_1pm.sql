@@ -9,5 +9,4 @@ CREATE TABLE IF NOT EXISTS reservations(
 	reserve_date TEXT NOT NULL,
 	reserve_time INTEGER NOT NULL,
 	seats INTEGER NOT NULL,
-	CONSTRAINT Unique_Reserve UNIQUE (reserve_date,reserve_time)
 );

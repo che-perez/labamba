@@ -41,10 +41,10 @@ reservationController.create = (req, res) => {
   
 reservationController.show = (req, res) => {
 	Reservation.findById(req.params.id)
-		.then(resvation => {
+		.then(reservation => {
 			res.json({
 				message: 'ok',
-				data: { reservation },
+				data: { reservation, },
 			});
 		}).catch(err => {
 			res.status(400).json({message: '400',err});
@@ -53,13 +53,13 @@ reservationController.show = (req, res) => {
   
   reservationController.update = (req, res) => {
     Reservation.update({
-	  first_name: req.body.firstname,
-      last_name: req.body.lastname,
+	  first_name: req.body.first_name,
+      last_name: req.body.last_name,
       email: req.body.email,
       telephone: req.body.telephone,
       made_time: Date.now(),
-      reserve_date: req.body.reservedate,
-      reserve_time: req.body.reservetime,
+      reserve_date: req.body.reserve_date,
+      reserve_time: req.body.reserve_time,
       seats: req.body.seats,
     }, req.params.id)
       .then(reservation => {
