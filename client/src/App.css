@@ -47,3 +47,28 @@ table {
 	border-spacing: 0;
 }
 /*Styling begins below */
+.App{
+	display: flex;
+	flex-direction: column;
+}
+
+.header{
+	display: flex;
+}
+
+.nav{
+	display: flex;
+	flex-direction: row;
+}
+
+.mainImage{
+
+}
+
+.footer{
+
+}
+
+.reservationConfirmation{
+	
+}
