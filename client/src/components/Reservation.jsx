@@ -23,32 +23,34 @@ class Reservation extends Component {
 		this.reservationSubmit = this.reservationSubmit.bind(this);
     this.getReservation = this.getReservation.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.reservationDelete = this.reservationDelete.bind(this);
+    this.reservationEdit = this.reservationEdit.bind(this);
 	}
 
-componentDidMount(){
+  componentDidMount(){
     return(
       this.getReservation()
     )
-  };
+    };
 
   handleInputChange(e){
-  const name = e.target.name;
-  const value = e.target.value;
-  console.log(value);
-  this.setState({
-    [name]: value,
+    const name = e.target.name;
+    const value = e.target.value;
+    console.log(value);
+    this.setState({
+      [name]: value,
   })
 }
 
   getReservation(){
     fetch('/api/reservations/')
-    .then(res => res.json())
-    .then(res => {
-      this.setState({
-        allReservations: res.data.reservations,
-        dataLoaded: true,
-      });
-    }).catch(err => console.log(err));
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          allReservations: res.data.reservations,
+          dataLoaded: true,
+      })
+      }).catch(err => console.log(err));
   }
 
 	reservationSubmit(method, e, id) {
@@ -67,6 +69,30 @@ componentDidMount(){
 	  	})
 	 }
 
+   reservationEdit(method, e, data){
+     fetch('/api/tweeds', {
+       method: 'PUT',
+       headers: {
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify(data),
+     }).then(res => res.json())
+       .then(res => {
+         this.getReservation()
+       })
+    }
+
+   reservationDelete(id, e) {
+       e.preventDefault();
+ 	  	 console.log('reservation deleted')
+ 	  	 fetch(`/api/reservations/`, {
+ 	  	   method: 'DELETE',
+ 	  	 }).then(res => res.json())
+         .then(res => {
+         this.getReservation();
+ 	  	}).catch(err => console.log(err));
+ 	 }
+
 
 
 	render() {
@@ -76,7 +102,8 @@ componentDidMount(){
                          handleInput={this.handleInputChange}
 	                       state={this.state}
                          dataLoaded={this.state.dataLoaded}
-                         />
+                         edit={this.reservationEdit}
+                         delete={this.reservationDelete} />
 	    </div>
 	  )
 	}

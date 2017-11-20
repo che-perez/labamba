@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReservationConfirmation from './ReservationConfirmation';
 
 class ReservationForm extends Component {
 	constructor(props) {
@@ -61,6 +62,9 @@ class ReservationForm extends Component {
 	        			onChange={this.props.handleInput} />
 	        		<input type="submit" value="Make Reservation" />
 	      		</form>
+            <ReservationConfirmation edit={this.props.reservationEdit}
+                                     delete={this.props.reservationDelete}
+                                     reservationSubmit={this.props.reservationSubmit} />
 	    	</div>
 	  	)
 	 }
