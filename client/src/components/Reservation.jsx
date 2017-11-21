@@ -118,6 +118,7 @@ class Reservation extends Component {
 
 
 
+
 	 moveNext(){
 		 return(
 		 this.setState({
@@ -127,7 +128,38 @@ class Reservation extends Component {
 	 )
 	 }
 
-	render() {
+    reservationEdit(method, e, data){
+     fetch('/api/tweeds', {
+       method: 'PUT',
+       headers: {
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify(data),
+      }).then(res => res.json())
+        .then(res => {
+          this.setState({
+            reservationStatus: 'edit',
+          })
+         this.getReservationByEmail()
+       })
+    }
+    
+
+    reservationDelete(id, e) {
+       e.preventDefault();
+       console.log('reservation deleted')
+       fetch(`/api/reservations/`, {
+         method: 'DELETE',
+       }).then(res => res.json())
+         .then(res => {
+          this.setState({
+            reservationStatus: 'delete',
+          })
+         this.getReservationByEmail();
+      }).catch(err => console.log(err));
+    }
+
+	 render() {
 	  return(
 	    <div className='reservation'>
 	      <ReservationForm reservationSubmit={this.reservationSubmit}

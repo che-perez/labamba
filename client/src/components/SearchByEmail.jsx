@@ -8,37 +8,6 @@ class SearchByEmail extends Component {
 		console.log(this.props, 'are the props') }
 	
 
-   reservationEdit(method, e, data){
-     fetch('/api/tweeds', {
-       method: 'PUT',
-       headers: {
-         'Content-Type': 'application/json',
-       },
-       body: JSON.stringify(data),
-     	}).then(res => res.json())
-       	.then(res => {
-       		this.setState({
-       			reservationStatus: 'edit',
-       		})
-         this.getReservationByEmail()
-       })
-	}
-    
-
-   reservationDelete(id, e) {
-       e.preventDefault();
- 	  	 console.log('reservation deleted')
- 	  	 fetch(`/api/reservations/`, {
- 	  	   method: 'DELETE',
- 	  	 }).then(res => res.json())
-         .then(res => {
-         	this.setState({
-         		reservationStatus: 'delete',
-         	})
-         this.getReservationByEmail();
- 	  	}).catch(err => console.log(err));
- 	 }
-
   	render() {
   		return(
     	<div className='searchByEmail'>
