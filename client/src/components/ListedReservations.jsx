@@ -9,7 +9,9 @@ function ListedReservations(props){
         			return <ReservationInfo key={reservation.id} 
         			reservationStatus={props.reservationStatus} 
         			reservation={reservation} 
-        			handleInput={props.handleInput}/>
+        			handleInput={props.handleInput}
+        			reservationEdit={props.reservationEdit}
+        			reservationDelete={props.reservationDelete}/>
       })}
 
     </div>

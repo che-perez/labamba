@@ -10,6 +10,7 @@ class ReservationInfo extends Component {
 	render() {
 		return(
 			<div className="res-form-container">
+			<form>
 			<div className="res-info">			
 				<input onChange={this.props.handleInput} value={this.props.reservation.first_name}></input>
 				<input onChange={this.props.handleInput} value={this.props.reservation.last_name}></input>
@@ -23,6 +24,7 @@ class ReservationInfo extends Component {
 				<button>Edit</button>
 				<button>Delete</button>
 			</div>
+			</form>
 			</div>
 			)
 	}

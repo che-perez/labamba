@@ -28,9 +28,15 @@ class Reservation extends Component {
     this.getReservation = this.getReservation.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
 		this.moveNext = this.moveNext.bind(this);
+<<<<<<< HEAD
 		this.getReservationByEmail = this.getReservationByEmail.bind(this);
 		this.getAllMesas = this.getAllMesas.bind(this);
 
+=======
+    this.getReservationByEmail = this.getReservationByEmail.bind(this);
+    this.reservationEdit = this.reservationEdit.bind(this);
+    this.reservationDelete = this.reservationDelete.bind(this);
+>>>>>>> passed down DELETE and PUT methods as props to ReservationInfo component
 	}
 
   componentDidMount(){
@@ -140,6 +146,7 @@ class Reservation extends Component {
           this.setState({
             reservationStatus: 'edit',
           })
+          console.log('reservation edited')
          this.getReservationByEmail()
        })
     }
@@ -177,7 +184,9 @@ class Reservation extends Component {
                   allReservations={this.state.allReservations}
                   dataLoaded={this.state.dataLoaded}
                   searched={this.state.searched}
-                  reservationStatus={this.state.reservationStatus} />
+                  reservationStatus={this.state.reservationStatus}
+                  reservationEdit={this.reservationDelete}
+                  reservationDelete={this.reservationDelete} />
                    ) : (
                   <p>Loading reservation data...</p>
                    )}

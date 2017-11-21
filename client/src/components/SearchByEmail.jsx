@@ -11,7 +11,9 @@ class SearchByEmail extends Component {
   	render() {
   		return(
     	<div className='searchByEmail'>
-			<form className="search-email" onSubmit={(e) => (e.preventDefault(), console.log(this.props), this.props.getReservationByEmail(this.props.value))} >
+			<form className="search-email" onSubmit={(e) => (e.preventDefault(), 
+				console.log(this.props), 
+				this.props.getReservationByEmail(this.props.value))} >
 				<input type="text" name="email"
 				placeholder="Search for reservation by email here!"
 				onChange={this.props.handleInput} />
@@ -22,7 +24,9 @@ class SearchByEmail extends Component {
 			{this.props.searched ? (
 				<ListedReservations allReservations={this.props.allReservations}
 				reservationStatus={this.props.reservationStatus}
-				handleInput={this.props.handleInput}/>
+				handleInput={this.props.handleInput}
+				reservationEdit={this.props.reservationEdit}
+				reservationDelete={this.props.reservationDelete}/>
 				) : (
 				<p hidden>loading all them rezervations</p>
 				)}
