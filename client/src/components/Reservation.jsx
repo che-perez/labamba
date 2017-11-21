@@ -33,7 +33,6 @@ class Reservation extends Component {
 
 	}
 
-
   componentDidMount(){
       this.getReservation();
 			this.getAllMesas();
@@ -145,7 +144,8 @@ class Reservation extends Component {
                   getReservationByEmail={this.getReservationByEmail}
                   allReservations={this.state.allReservations}
                   dataLoaded={this.state.dataLoaded}
-                  searched={this.state.searched} />
+                  searched={this.state.searched}
+                  reservationStatus={this.state.reservationStatus} />
                    ) : (
                   <p>Loading reservation data...</p>
                    )}

@@ -6,7 +6,10 @@ function ListedReservations(props){
     <div className='listedReservations'>
 		    	{console.log(props)}    
 		    	{props.allReservations.map(reservation => {
-        			return <ReservationInfo key={reservation.id} reservation={reservation} />
+        			return <ReservationInfo key={reservation.id} 
+        			reservationStatus={props.reservationStatus} 
+        			reservation={reservation} 
+        			handleInput={props.handleInput}/>
       })}
 
     </div>

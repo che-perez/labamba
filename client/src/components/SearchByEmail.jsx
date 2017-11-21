@@ -17,6 +17,9 @@ class SearchByEmail extends Component {
        body: JSON.stringify(data),
      	}).then(res => res.json())
        	.then(res => {
+       		this.setState({
+       			reservationStatus: 'edit',
+       		})
          this.getReservationByEmail()
        })
 	}
@@ -29,6 +32,9 @@ class SearchByEmail extends Component {
  	  	   method: 'DELETE',
  	  	 }).then(res => res.json())
          .then(res => {
+         	this.setState({
+         		reservationStatus: 'delete',
+         	})
          this.getReservationByEmail();
  	  	}).catch(err => console.log(err));
  	 }
@@ -45,7 +51,9 @@ class SearchByEmail extends Component {
 			</form>
 			
 			{this.props.searched ? (
-				<ListedReservations allReservations={this.props.allReservations}/>
+				<ListedReservations allReservations={this.props.allReservations}
+				reservationStatus={this.props.reservationStatus}
+				handleInput={this.props.handleInput}/>
 				) : (
 				<p hidden>loading all them rezervations</p>
 				)}
