@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import ReservationForm from './ReservationForm';
 import { Link, Redirect } from 'react-router-dom';
+import ReservationForm from './ReservationForm';
+
+
 
 class Reservation extends Component {
 	constructor(props) {
@@ -23,6 +25,7 @@ class Reservation extends Component {
 		this.reservationSubmit = this.reservationSubmit.bind(this);
     this.getReservation = this.getReservation.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+		this.moveNext = this.moveNext.bind(this);
 	}
 
   componentDidMount(){
@@ -51,6 +54,7 @@ class Reservation extends Component {
       }).catch(err => console.log(err));
   }
 
+//added redirect for tables component
 	reservationSubmit(method, e, id) {
       e.preventDefault();
 	  	console.log('new reservation made')
@@ -67,6 +71,15 @@ class Reservation extends Component {
 	  	})
 	 }
 
+	 moveNext(){
+		 return(
+		 this.setState({
+			 fireRedirect: true,
+			 redirectPath: '/table',
+		 })
+	 )
+	 }
+
 	render() {
 	  return(
 	    <div className='reservation'>
@@ -75,7 +88,9 @@ class Reservation extends Component {
 	                       state={this.state}
                          dataLoaded={this.state.dataLoaded}
                          edit={this.reservationEdit}
-                         delete={this.reservationDelete} />
+                         delete={this.reservationDelete}
+												 reservationInfo={this.state.reservation}
+												 next={this.moveNext} />
 	    </div>
 	  )
 	}

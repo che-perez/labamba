@@ -15,7 +15,6 @@ class App extends Component {
       <Router>
       <div className="App">
         <Header />
-        <MainImage />
           <Route exact path='/Reservation' component={Reservation} />
   				<Route path='/Menu' component={Menu} />
   				<Route path='/About' component={About} />
