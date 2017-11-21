@@ -47,7 +47,7 @@ class SearchByEmail extends Component {
 			{this.props.searched ? (
 				<ListedReservations allReservations={this.props.allReservations}/>
 				) : (
-				<p>loading all them rezervations</p>
+				<p hidden>loading all them rezervations</p>
 				)}
     	</div>
   		)

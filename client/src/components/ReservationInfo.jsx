@@ -3,13 +3,13 @@ import React from 'react';
 const ReservationInfo = (props) => {
 	return(
 		<div className="res-info">
-			<p>{props.reservation.first_name}</p>
-			<p>{props.reservation.last_name}</p>
-			<p>{props.reservation.email}</p>
-			<p>{props.reservation.telephone}</p>
-			<p>{props.reservation.reserve_date}</p>
-			<p>{props.reservation.reserve_time}</p>
-			<p>{props.reservation.seats}</p>
+			<input value={props.reservation.first_name}></input>
+			<input value={props.reservation.last_name}></input>
+			<input value={props.reservation.email}></input>
+			<input value={props.reservation.telephone}></input>
+			<input value={props.reservation.reserve_date}></input>
+			<input value={props.reservation.reserve_time}></input>
+			<input value={props.reservation.seats}></input>
 		</div>
 		)
 }
