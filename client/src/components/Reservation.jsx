@@ -30,7 +30,9 @@ class Reservation extends Component {
 		this.moveNext = this.moveNext.bind(this);
 		this.getReservationByEmail = this.getReservationByEmail.bind(this);
 		this.getAllMesas = this.getAllMesas.bind(this);
+
 	}
+
 
   componentDidMount(){
       this.getReservation();
@@ -41,22 +43,38 @@ class Reservation extends Component {
 		e.preventDefault();
     const name = e.target.name;
     const value = e.target.value;
-    console.log(value);
+    console.log(e.target.value);
     this.setState({
       [name]: value,
-  })
-}
+    })
+  }
 
-  getReservation(){
+  getReservation(event){
     fetch('/api/reservations/')
       .then(res => res.json())
       .then(res => {
+        console.log('getReservation is logging')
         this.setState({
           allReservations: res.data.reservations,
           dataLoaded: true,
       })
       }).catch(err => console.log(err));
-  }
+    }
+
+    getReservationByEmail(event, email){
+      fetch(`/api/reservations/email/dan@dan.com`)
+        .then(res => res.json())
+        .then(res => {
+          console.log('email fetched');
+          console.log(res.data, 'this is the res.data value')
+          this.setState({
+            allReservations: res.data.reservation,
+            dataLoaded: true,
+            searched: true,
+        })
+        }).catch(err => console.log(err));
+        console.log(this)
+    }
 
 	getReservationByEmail(event, email){
 	      fetch(`/api/reservations/email/${this.state.email}`)
@@ -84,15 +102,15 @@ class Reservation extends Component {
 
 	reservationSubmit(method, e, id) {
       e.preventDefault();
-	  	console.log('new reservation made')
-	  	console.log(this.state, 'this is the state')
-	  	fetch(`/api/reservations/`, {
-	  		method: 'POST',
-	  		headers: {
-	  			'Content-Type': 'application/json'
-	  		},
+      console.log('new reservation made')
+      console.log(this.state, 'this is the state')
+      fetch(`/api/reservations/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify(id),
-	  	}).then(res => res.json())
+      }).then(res => res.json())
       .then(res => {
         this.getReservation();
 				this.getAllMesas();
@@ -122,6 +140,17 @@ class Reservation extends Component {
 												 allReservations={this.state.allReservations}
 												 mesas={this.state.allMesas} />
 	    </div>
+	      {this.state.dataLoaded ? (
+        <SearchByEmail  handleInput={this.handleInputChange}
+                  getReservationByEmail={this.getReservationByEmail}
+                  allReservations={this.state.allReservations}
+                  dataLoaded={this.state.dataLoaded}
+                  searched={this.state.searched} />
+                   ) : (
+                  <p>Loading reservation data...</p>
+                   )}
+      </div>
+
 	  )
 	}
 }
