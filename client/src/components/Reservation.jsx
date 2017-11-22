@@ -58,7 +58,6 @@ class Reservation extends Component {
     fetch('/api/reservations/')
       .then(res => res.json())
       .then(res => {
-        console.log('getReservation is logging')
         this.setState({
           allReservations: res.data.reservations,
           dataLoaded: true,
@@ -67,18 +66,16 @@ class Reservation extends Component {
     }
 
     getReservationByEmail(event, email){
-      fetch(`/api/reservations/email/dan@dan.com`)
+      fetch(`/api/reservations/email/${this.state.email}`)
         .then(res => res.json())
-        .then(res => {
-          console.log('email fetched');
-          console.log(res.data, 'this is the res.data value')
+        .then(res => {          
+          console.log(this, 'this is this from getReservationByEmail')
           this.setState({
             allReservations: res.data.reservation,
             dataLoaded: true,
             searched: true,
         })
         }).catch(err => console.log(err));
-        console.log(this)
     }
 
 	getReservationByEmail(event, email){
@@ -134,8 +131,8 @@ class Reservation extends Component {
 	 )
 	 }
 
-    reservationEdit(method, e, data){
-     fetch(`/api/reservations`, {
+    reservationEdit(id, data){
+     fetch(`/api/reservations/${id}`, {
        method: 'PUT',
        headers: {
          'Content-Type': 'application/json',
@@ -147,8 +144,8 @@ class Reservation extends Component {
             reservationStatus: 'edit',
           })
           console.log('reservation edited')
-         this.getReservation()
-       })
+         this.getReservationByEmail()
+       }).catch(err=> console.log(err))
     }
     
 

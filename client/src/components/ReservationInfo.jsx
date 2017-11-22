@@ -11,8 +11,7 @@ class ReservationInfo extends Component {
 		return(
 			<div className="res-form-container">
 			<form className="res-edit" onSubmit={(e) => (e.preventDefault(),
-				console.log(this.props, 'these are the props within the form in reservation info'),
-				this.props.reservationEdit())}>
+				this.props.reservationEdit(this.props.reservation.id))}>
 			<div className="edit-info">			
 				<input onChange={this.props.handleInput} value={this.props.reservation.first_name}></input>
 				<input onChange={this.props.handleInput} value={this.props.reservation.last_name}></input>
@@ -28,7 +27,6 @@ class ReservationInfo extends Component {
 			</form>
 			<div className="delete-button">
 			<form className="res-delete" onSubmit={(e) => (e.preventDefault(),
-				console.log(this.props, 'therse are the props within delete in res form'),
 				this.props.reservationDelete(this.props.reservation.id))}>
 				<button>Delete</button>
 			</form>
