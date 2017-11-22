@@ -26,7 +26,8 @@ class SearchByEmail extends Component {
 				reservationStatus={this.props.reservationStatus}
 				handleInput={this.props.handleInput}
 				reservationEdit={this.props.reservationEdit}
-				reservationDelete={this.props.reservationDelete}/>
+				reservationDelete={this.props.reservationDelete}
+				state={this.props.state}/>
 				) : (
 				<p hidden>loading all them rezervations</p>
 				)}

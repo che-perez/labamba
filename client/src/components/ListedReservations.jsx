@@ -11,7 +11,8 @@ function ListedReservations(props){
         			reservation={reservation} 
         			handleInput={props.handleInput}
         			reservationEdit={props.reservationEdit}
-        			reservationDelete={props.reservationDelete}/>
+        			reservationDelete={props.reservationDelete}
+        			state={props.state}/>
       })}
 
     </div>

@@ -131,8 +131,11 @@ class Reservation extends Component {
 	 )
 	 }
 
-    reservationEdit(id, data){
-     fetch(`/api/reservations/${id}`, {
+    reservationEdit(data, e){
+      e.preventDefault();
+      console.log('reservation Edit call triggered----')
+      console.log(data.id, data);
+     fetch(`/api/reservations/${data.id}`, {
        method: 'PUT',
        headers: {
          'Content-Type': 'application/json',
@@ -183,7 +186,8 @@ class Reservation extends Component {
                   searched={this.state.searched}
                   reservationStatus={this.state.reservationStatus}
                   reservationEdit={this.reservationEdit}
-                  reservationDelete={this.reservationDelete} />
+                  reservationDelete={this.reservationDelete}
+                  state={this.state} />
                    ) : (
                   <p>Loading reservation data...</p>
                    )}

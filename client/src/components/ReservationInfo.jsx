@@ -10,8 +10,7 @@ class ReservationInfo extends Component {
 	render() {
 		return(
 			<div className="res-form-container">
-			<form className="res-edit" onSubmit={(e) => (e.preventDefault(),
-				this.props.reservationEdit(this.props.reservation.id))}>
+			<form className="res-edit" onSubmit={(e) => (this.props.reservationEdit(this.props.reservation, e))}>
 			<div className="edit-info">			
 				<input onChange={this.props.handleInput} value={this.props.reservation.first_name}></input>
 				<input onChange={this.props.handleInput} value={this.props.reservation.last_name}></input>
@@ -21,9 +20,7 @@ class ReservationInfo extends Component {
 				<input onChange={this.props.handleInput} value={this.props.reservation.reserve_time}></input>
 				<input onChange={this.props.handleInput} value={this.props.reservation.seats}></input>
 			</div>
-			<div className="edit-button">
-				<button>Edit</button>
-			</div>
+				<button type="submit">Edit</button>
 			</form>
 			<div className="delete-button">
 			<form className="res-delete" onSubmit={(e) => (e.preventDefault(),
