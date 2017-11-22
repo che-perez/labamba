@@ -1,44 +1,14 @@
-import React, { Component } from 'react';
-import ReservationConfirmation from './ReservationConfirmation';
+import React, { Component, PropTypes } from 'react';
+{/*import { ModalContainer, ModalDialog } from 'react-modal-dialog';*/}
 
-class ReservationForm extends Component {
+class ReservationForm extends React.Component {
 	constructor(props) {
-  		super(props)
-  		this.reservationSubmit = this.reservationSubmit.bind(this)
-  		this.newReservationHandler = this.newReservationHandler.bind(this)
-  	}
-
-  	reservationSubmit(event, id) {
-	  	event.preventDefault();
-	  	console.log('new reservation made')
-	  	console.log(this.state, 'this is the state')
-	  	fetch(`/api/reservations/`, {
-	  		method: 'POST',
-	  		reservation: this.state.reservation,
-	  		headers: {
-	  			'Content-Type': 'application/json'
-	  		}
-	  	}).then((res)=>{
-	  		console.log('added')
-	  		this.setState({
-	  			fireRedirect: true,
-	  		})
-	  	})
-	 }
-
-  	newReservationHandler(e) {
-	 	const reservation = e.target.name;
-	 	const value = e.target.value;
-	 	this.setState({
-	 		[reservation]: value,
-	 	})
-	 	console.log('name is ', reservation, 'value is ', value)
-	 	console.log(this.props.state)
-	 }
-	 render() {
+  	super(props)
+}
+    render() {
   		return(
 	    	<div className='reservationForm'>
-	      		<form className="add-reservation" onSubmit={e => this.props.reservationSubmit('POST', e, this.props.state)}>
+	      		<form className="add-reservation" onSubmit={e => this.props.reservationSubmit('POST', e, this.props.state) }>
 	        		<input type="text" placeholder="First Name"
 	        			name="first_name"
 	        			onChange={this.props.handleInput} />
@@ -54,20 +24,37 @@ class ReservationForm extends Component {
               <input type="text" placeholder="Reservation Date"
 	         			name="reserve_date"
 	        			onChange={this.props.handleInput} />
-              <input type="text" placeholder="Reservation Time"
+							<select  type="text"
 	        			name="reserve_time"
-	        			onChange={this.props.handleInput} />
-	        		<input type="number" placeholder="Seats"
+	        			onChange={this.props.handleInput}>
+								<option value="100">1:00 PM</option>
+								<option value="200">2:00 PM</option>
+								<option value="300">3:00 PM</option>
+								<option value="400">4:00 PM</option>
+								<option value="500">5:00 PM</option>
+								<option value="600">6:00 PM</option>
+								<option value="700">7:00 PM</option>
+								<option value="800">8:00 PM</option>
+								<option value="900">9:00 PM</option>
+								<option value="1000">10:00 PM</option>
+								<option value="1100">11:00 PM</option>
+						  </select>
+	        		<select type="number" placeholder="Seats"
 	         			name="seats"
-	        			onChange={this.props.handleInput} />
+	        			onChange={this.props.handleInput} >
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+	        		</select>
 	        		<input type="submit" value="Make Reservation" />
 	      		</form>
-            <ReservationConfirmation edit={this.props.reservationEdit}
-                                     delete={this.props.reservationDelete}
-                                     reservationSubmit={this.props.reservationSubmit} />
 	    	</div>
 	  	)
-	 }
-}
 
+}
+}
 export default ReservationForm;
