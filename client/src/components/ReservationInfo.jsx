@@ -10,8 +10,10 @@ class ReservationInfo extends Component {
 	render() {
 		return(
 			<div className="res-form-container">
-			<form>
-			<div className="res-info">			
+			<form className="res-edit" onSubmit={(e) => (e.preventDefault(),
+				console.log(this.props, 'these are the props within the form in reservation info'),
+				this.props.reservationEdit())}>
+			<div className="edit-info">			
 				<input onChange={this.props.handleInput} value={this.props.reservation.first_name}></input>
 				<input onChange={this.props.handleInput} value={this.props.reservation.last_name}></input>
 				<input onChange={this.props.handleInput} value={this.props.reservation.email}></input>
@@ -20,11 +22,17 @@ class ReservationInfo extends Component {
 				<input onChange={this.props.handleInput} value={this.props.reservation.reserve_time}></input>
 				<input onChange={this.props.handleInput} value={this.props.reservation.seats}></input>
 			</div>
-			<div className="change-buttons">
+			<div className="edit-button">
 				<button>Edit</button>
-				<button>Delete</button>
 			</div>
 			</form>
+			<div className="delete-button">
+			<form className="res-delete" onSubmit={(e) => (e.preventDefault(),
+				console.log(this.props, 'therse are the props within delete in res form'),
+				this.props.reservationDelete(this.props.reservation.id))}>
+				<button>Delete</button>
+			</form>
+			</div>
 			</div>
 			)
 	}

@@ -135,7 +135,7 @@ class Reservation extends Component {
 	 }
 
     reservationEdit(method, e, data){
-     fetch('/api/tweeds', {
+     fetch(`/api/reservations`, {
        method: 'PUT',
        headers: {
          'Content-Type': 'application/json',
@@ -147,18 +147,18 @@ class Reservation extends Component {
             reservationStatus: 'edit',
           })
           console.log('reservation edited')
-         this.getReservationByEmail()
+         this.getReservation()
        })
     }
     
 
-    reservationDelete(id, e) {
-       e.preventDefault();
+    reservationDelete(id) {
        console.log('reservation deleted')
-       fetch(`/api/reservations/`, {
+       fetch(`/api/reservations/${id}`, {
          method: 'DELETE',
        }).then(res => res.json())
          .then(res => {
+          console.log(res, 'this is res from delete method')
           this.setState({
             reservationStatus: 'delete',
           })
@@ -185,7 +185,7 @@ class Reservation extends Component {
                   dataLoaded={this.state.dataLoaded}
                   searched={this.state.searched}
                   reservationStatus={this.state.reservationStatus}
-                  reservationEdit={this.reservationDelete}
+                  reservationEdit={this.reservationEdit}
                   reservationDelete={this.reservationDelete} />
                    ) : (
                   <p>Loading reservation data...</p>
