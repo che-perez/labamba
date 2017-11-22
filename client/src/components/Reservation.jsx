@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ReservationForm from './ReservationForm';
 
-
-
 class Reservation extends Component {
 	constructor(props) {
 		super(props)
@@ -19,11 +17,16 @@ class Reservation extends Component {
 			},
 			allReservations: null,
 			dataLoaded: false,
+			fireRedirect: false,
+			redirect: null,
+			searched: false,
+			reservationStatus: '',
 		}
 		this.reservationSubmit = this.reservationSubmit.bind(this);
     this.getReservation = this.getReservation.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
 		this.moveNext = this.moveNext.bind(this);
+		this.getReservationByEmail = this.getReservationByEmail.bind(this);
 	}
 
   componentDidMount(){
@@ -53,7 +56,19 @@ class Reservation extends Component {
       }).catch(err => console.log(err));
   }
 
-//added redirect for tables component
+	getReservationByEmail(event, email){
+	      fetch(`/api/reservations/email/${this.state.email}`)
+	        .then(res => res.json())
+	        .then(res => {
+	          console.log(this, 'this is this from getReservationByEmail')
+	          this.setState({
+	            allReservations: res.data.reservation,
+	            dataLoaded: true,
+	            searched: true,
+	        })
+	        }).catch(err => console.log(err));
+	    }
+
 	reservationSubmit(method, e, id) {
       e.preventDefault();
 	  	console.log('new reservation made')
