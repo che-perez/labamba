@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import TableReservation from './TableReservation';
 
 class ReservationForm extends React.Component {
@@ -6,6 +7,8 @@ class ReservationForm extends React.Component {
   	super(props);
 		this.state = {
 			display: true,
+			fireRedirect: false,
+			redirectPath: null,
 		}
 		this.displayTable = this.displayTable.bind(this);
 }
@@ -13,6 +16,8 @@ class ReservationForm extends React.Component {
 displayTable() {
 	this.setState ({
 		display: false,
+		fireRedirect: true,
+		redirectPath: '/table',
 	})
 }
 
@@ -20,8 +25,8 @@ displayTable() {
   		return(
 				<div>
 				{ this.state.display ?
-	    	(<div className='reservationForm' onSubmit={() => this.props.moveNext}>
-	      		<form className="add-reservation" >
+	    	(<div className='reservationForm'>
+	      		<form className="add-reservation" onSubmit={this.displayTable} >
 	        		<input type="text" placeholder="First Name"
 	        			name="first_name"
 	        			onChange={this.props.handleInput} required />
@@ -63,7 +68,7 @@ displayTable() {
 								<option value="7">7</option>
 								<option value="8">8</option>
 	        		</select>
-							<input type="submit" value="next" onClick={this.displayTable} />
+							<input type="submit" value="next" />
 						</form>
 					</div>
 				) : (
@@ -73,13 +78,15 @@ displayTable() {
 														dataLoaded={this.props.dataLoaded}
 														edit={this.props.edit}
 														delete={this.props.delete}
-														reservationInfo={this.props.reservationInfo} />) }
+														reservationInfo={this.props.reservationInfo} /> ) }
 </div>
 )}}
 
 export default ReservationForm;
 
 {/* onSubmit={e => this.props.reservationSubmit('POST', e, this.props.state) }
+
+  onSubmit={() => this.props.moveNext}
 
 {this.props.handleInput &&
 	 }

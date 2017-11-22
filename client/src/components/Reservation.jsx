@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import ReservationForm from './ReservationForm';
 
 
@@ -19,8 +18,6 @@ class Reservation extends Component {
 			},
 			allReservations: null,
 			dataLoaded: false,
-			fireRedirect: false,
-			redirectPath: null,
 		}
 		this.reservationSubmit = this.reservationSubmit.bind(this);
     this.getReservation = this.getReservation.bind(this);
@@ -35,6 +32,7 @@ class Reservation extends Component {
   };
 
   handleInputChange(e){
+		e.preventDefault();
     const name = e.target.name;
     const value = e.target.value;
     console.log(value);
@@ -87,8 +85,6 @@ class Reservation extends Component {
                          handleInput={this.handleInputChange}
 	                       state={this.state}
                          dataLoaded={this.state.dataLoaded}
-                         edit={this.reservationEdit}
-                         delete={this.reservationDelete}
 												 reservationInfo={this.state.reservation}
 												 next={this.moveNext} />
 	    </div>
