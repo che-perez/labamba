@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReservationForm from './ReservationForm';
-import { Link, Redirect } from 'react-router-dom'
+
+
 
 class Reservation extends Component {
 	constructor(props) {
@@ -14,26 +15,25 @@ class Reservation extends Component {
 	  			date: props.reservation ? props.reservation.reserve_date : '',
 	  			time: props.reservation ? props.reservation.reserve_time : '',
 	  			seats: props.reservation ? props.reservation.seats : '',
+					mesa_id: props.reservation ? props.reservation.mesa_id : '',
 			},
 			allReservations: null,
 			dataLoaded: false,
-			fireRedirect: false,
-			redirectPath: null,
 		}
 		this.reservationSubmit = this.reservationSubmit.bind(this);
     this.getReservation = this.getReservation.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.reservationDelete = this.reservationDelete.bind(this);
-    this.reservationEdit = this.reservationEdit.bind(this);
+		this.moveNext = this.moveNext.bind(this);
 	}
 
   componentDidMount(){
     return(
       this.getReservation()
     )
-    };
+  };
 
   handleInputChange(e){
+		e.preventDefault();
     const name = e.target.name;
     const value = e.target.value;
     console.log(value);
@@ -53,6 +53,7 @@ class Reservation extends Component {
       }).catch(err => console.log(err));
   }
 
+//added redirect for tables component
 	reservationSubmit(method, e, id) {
       e.preventDefault();
 	  	console.log('new reservation made')
@@ -69,31 +70,14 @@ class Reservation extends Component {
 	  	})
 	 }
 
-   reservationEdit(method, e, data){
-     fetch('/api/tweeds', {
-       method: 'PUT',
-       headers: {
-         'Content-Type': 'application/json',
-       },
-       body: JSON.stringify(data),
-     }).then(res => res.json())
-       .then(res => {
-         this.getReservation()
-       })
-    }
-
-   reservationDelete(id, e) {
-       e.preventDefault();
- 	  	 console.log('reservation deleted')
- 	  	 fetch(`/api/reservations/`, {
- 	  	   method: 'DELETE',
- 	  	 }).then(res => res.json())
-         .then(res => {
-         this.getReservation();
- 	  	}).catch(err => console.log(err));
- 	 }
-
-
+	 moveNext(){
+		 return(
+		 this.setState({
+			 fireRedirect: true,
+			 redirectPath: '/table',
+		 })
+	 )
+	 }
 
 	render() {
 	  return(
@@ -102,8 +86,9 @@ class Reservation extends Component {
                          handleInput={this.handleInputChange}
 	                       state={this.state}
                          dataLoaded={this.state.dataLoaded}
-                         edit={this.reservationEdit}
-                         delete={this.reservationDelete} />
+												 reservationInfo={this.state.reservation}
+												 next={this.moveNext}
+												 allReservations={this.state.allReservations} />
 	    </div>
 	  )
 	}

@@ -54,21 +54,117 @@ table {
 
 .header{
 	display: flex;
+	align-items: flex-start;
+	top: 0;
+	width: 100%;
+
 }
 
-.nav{
-	display: flex;
-	flex-direction: row;
+.nav ul li{
+	display: inline-block;
+	padding: 3px;
+	border-style: solid;
+	border-color: green;
+	border-width: 2px;
+}
+
+.phoneHours{
+	align-self: flex-start;
+	height: 70px;
+	width: 100px;
+	border-style: solid;
+	border-color: coral;
+	border-width: 2px;
+}
+
+
+.sm-icon{
+	transform: scale(.2);
+	border-style: solid;
+	border-style: solid;
+	border-color: blue;
+	border-width: 2px;
+}
+
+.smLink{
+	display: inline-block;
+	height: 15px;
+	width: 30px;
 }
 
 .mainImage{
 
 }
 
-.footer{
+.reservation{
 
 }
 
-.reservationConfirmation{
-	
+.reservationForm{
+	display: flex;
+}
+
+.about{
+
+}
+
+.contact{
+
+}
+
+.contactBox{
+
+}
+
+.mapBox{
+
+}
+
+.hoursBox{
+
+}
+
+.next{
+	height: 20px;
+	width: 20px;
+	border-style: solid;
+	border-style: solid;
+	border-color: blue;
+	border-width: 2px;
+}
+
+.tableReservation{
+	display: flex;
+	flex-wrap: wrap;
+	height: 400px;
+	width: 400px;
+	border-style: solid;
+	border-style: solid;
+	border-color: blue;
+	border-width: 2px;
+}
+
+.table{
+	height: 19px;
+	width: 19px;
+	border-style: solid;
+	border-style: solid;
+	border-color: blue;
+	border-width: 2px;
+}
+
+.searchByEmail{
+
+}
+
+.listedReservations{
+
+}
+
+.menu{
+
+}
+
+.footer{
+
 }
