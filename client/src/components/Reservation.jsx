@@ -15,6 +15,7 @@ class Reservation extends Component {
 	  			date: props.reservation ? props.reservation.reserve_date : '',
 	  			time: props.reservation ? props.reservation.reserve_time : '',
 	  			seats: props.reservation ? props.reservation.seats : '',
+					mesa_id: props.reservation ? props.reservation.mesa_id : '',
 			},
 			allReservations: null,
 			dataLoaded: false,
@@ -86,7 +87,8 @@ class Reservation extends Component {
 	                       state={this.state}
                          dataLoaded={this.state.dataLoaded}
 												 reservationInfo={this.state.reservation}
-												 next={this.moveNext} />
+												 next={this.moveNext}
+												 allReservations={this.state.allReservations} />
 	    </div>
 	  )
 	}

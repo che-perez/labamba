@@ -6,18 +6,22 @@ class ReservationForm extends React.Component {
 	constructor(props) {
   	super(props);
 		this.state = {
+			allReservations: this.props.allReservations,
 			display: true,
 			fireRedirect: false,
 			redirectPath: null,
+			dataLoaded: this.props.dataLoaded,
 		}
 		this.displayTable = this.displayTable.bind(this);
 }
 
 displayTable() {
 	this.setState ({
+		allReservations: this.props.allReservations,
 		display: false,
 		fireRedirect: true,
 		redirectPath: '/table',
+		dataLoaded: this.props.dataLoaded,
 	})
 }
 
@@ -26,7 +30,7 @@ displayTable() {
 				<div>
 				{ this.state.display ?
 	    	(<div className='reservationForm'>
-	      		<form className="add-reservation" onSubmit={this.displayTable} >
+	      		<form id ='formId' className="add-reservation" onSubmit={this.displayTable} >
 	        		<input type="text" placeholder="First Name"
 	        			name="first_name"
 	        			onChange={this.props.handleInput} required />
@@ -68,7 +72,7 @@ displayTable() {
 								<option value="7">7</option>
 								<option value="8">8</option>
 	        		</select>
-							<input type="submit" value="next" />
+							<input type="submit" value="next"  />
 						</form>
 					</div>
 				) : (
@@ -76,9 +80,8 @@ displayTable() {
 														handleInput={this.props.handleInput}
 														state={this.props.state}
 														dataLoaded={this.props.dataLoaded}
-														edit={this.props.edit}
-														delete={this.props.delete}
-														reservationInfo={this.props.reservationInfo} /> ) }
+														reservationInfo={this.props.reservationInfo}
+														allReservations={this.props.allReservations} /> ) }
 </div>
 )}}
 
