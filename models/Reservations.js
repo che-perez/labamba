@@ -28,10 +28,10 @@ Reservations.findByEmail = (email) => {
 
 Reservations.create = (reservation) => {
 	return db.one(
-		`INSERT INTO reservations (first_name, last_name, email, telephone, made_time, reserve_date, reserve_time, seats)
-		VALUES ($1,$2, $3, $4, $5, $6, $7, $8)
+		`INSERT INTO reservations (first_name, last_name, email, telephone, made_time, reserve_date, reserve_time, seats, mesa_id)
+		VALUES ($1,$2, $3, $4, $5, $6, $7, $8, $9)
 		RETURNING *`,
-		[reservation.first_name, reservation.last_name, reservation.email, reservation.telephone, reservation.made_time, reservation.reserve_date, reservation.reserve_time, reservation.seats]
+		[reservation.first_name, reservation.last_name, reservation.email, reservation.telephone, reservation.made_time, reservation.reserve_date, reservation.reserve_time, reservation.seats, reservation.mesa_id]
 	);
 };
 

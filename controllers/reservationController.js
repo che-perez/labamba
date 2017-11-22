@@ -26,6 +26,7 @@ reservationController.create = (req, res) => {
       reserve_date: req.body.reserve_date,
       reserve_time: req.body.reserve_time,
       seats: req.body.seats,
+      mesa_id: req.body.mesa_id,
     }).then(reservation => {
       res.json({
 	      message: 'ok',
