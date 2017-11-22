@@ -1,0 +1,15 @@
+`INSERT INTO reservations (first_name, last_name, email, telephone, made_time, resrve_date, reserve_time, seats, mesas_id) 
+VALUES ("Dan", "Levenson", "dan@mofongo", "123-456-7890", "1511299513477", "11/29/2017", "7:00 PM", 2, 1),
+VALUES ("Robert", "Motion", "rob@mofongo", "123-456-7890", "1511299613477", "11/29/2017", "6:00 PM", 4, 15),
+VALUES ("Ileana", "Ordonez", "illy@mofongo", "123-456-7890", "1511299713477", "11/29/2017", "5:00 PM", 4, 10),
+VALUES ("Josue", "Perez", "josue@mofongo", "123-456-7890", "1511299813477", "11/29/2017", "5:00 PM",8, 18),
+VALUES ("John", "Master", "master@mofongo", "123-456-7890", "1511299913477", "11/29/2017", "5:00 PM", 8, 20),
+VALUES ("Dan", "Levenson", "dan@mofongo", "123-456-7890", "1511291013477", "11/30/2017", "8:00 PM", 4, 9),
+VALUES ("Ileana", "Ordonez", "illy@mofongo", "123-456-7890", "1511210113477", "11/30/2017", "9:00 PM", 2, 2),
+VALUES ("Robert", "Motion", "rob@mofongo", "123-456-7890", "1511210413477", "11/30/2017", "5:00 PM", 4, 9),
+VALUES ("John", "Master", "master@mofongo", "123-456-7890", "1511299413477", "11/30/2017", "8:00 PM", 2, 3),
+VALUES ("Josue", "Perez", "josue@mofongo", "123-456-7890", "1511299415477", "12/1/2017", "7:00 PM", 2, 5),
+VALUES ("Juan", "Del Pueblo", "juan@mofongo", "123-456-7890", "1511299913477", "12/1/2017", "7:00 PM", 2, 6),
+VALUES ("Alexa", "Siri", "alri@mofongo", "123-456-7890", "1511299513477", "12/1/2017", "6:00 PM", 2, 1),
+VALUES ("Daddy", "Yankee", "yankee@mofongo", "123-456-789", "1511299913477", "12/1/2017", "7:00 PM", 8, 19),
+VALUES ("Carlos", "Beltran", "beltran@mofongo", "123-456-789", "1511299913477", "12/1/2017", "8:00 PM", 8, 20),;
