@@ -39,7 +39,7 @@ reservationController.create = (req, res) => {
       });
     });
   };
-  
+
 reservationController.show = (req, res) => {
 	Reservation.findById(req.params.id)
 		.then(reservation => {
@@ -51,7 +51,7 @@ reservationController.show = (req, res) => {
 			res.status(400).json({message: '400',err});
 		});
   };
-  
+
 reservationController.find = (req, res) => {
 	Reservation.findByEmail(req.params.email)
 		.then(reservation => {
@@ -63,7 +63,7 @@ reservationController.find = (req, res) => {
 			res.status(400).json({message: '400',err});
 		});
   };
-  
+
   reservationController.update = (req, res) => {
     Reservation.update({
 	  first_name: req.body.first_name,
@@ -85,7 +85,7 @@ reservationController.find = (req, res) => {
 	      res.status(400).json(err);
       });
   };
-  
+
 reservationController.destroy = (req,res) => {
     Reservation.destroy(req.params.id)
     .then(() => {
@@ -95,5 +95,5 @@ reservationController.destroy = (req,res) => {
 	    res.status(400).json(err);
     });
   };
-  
+
 module.exports = reservationController;
