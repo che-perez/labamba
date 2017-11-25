@@ -12,13 +12,13 @@ class ReservationInfo extends Component {
 			<div className="res-form-container">
 			<form className="res-edit" onSubmit={(e) => (this.props.reservationEdit(this.props.reservation, e))}>
 			<div className="edit-info">			
-				<input onChange={this.props.handleInput} value={this.props.reservation.first_name}></input>
-				<input onChange={this.props.handleInput} value={this.props.reservation.last_name}></input>
-				<input onChange={this.props.handleInput} value={this.props.reservation.email}></input>
-				<input onChange={this.props.handleInput} value={this.props.reservation.telephone}></input>
-				<input onChange={this.props.handleInput} value={this.props.reservation.reserve_date}></input>
-				<input onChange={this.props.handleInput} value={this.props.reservation.reserve_time}></input>
-				<input onChange={this.props.handleInput} value={this.props.reservation.seats}></input>
+				<input type="text" name="reservation.first_name" onChange={this.props.handleInput} placeholder={this.props.reservation.first_name}></input>
+				<input type="text" name="last_name" onChange={this.props.handleInput} placeholder="Last Name" value={this.props.reservation.last_name}></input>
+				<input type="text" name="email" onChange={this.props.handleInput} placeholder="Email" value={this.props.reservation.email}></input>
+				<input type="text" name="telephone" onChange={this.props.handleInput} placeholder="Phone Number" value={this.props.reservation.telephone}></input>
+				<input type="text" name="reserve_date" onChange={this.props.handleInput} placeholder="Reservation Date" value={this.props.reservation.reserve_date}></input>
+				<input type="text" name="reserve_time" onChange={this.props.handleInput} placeholder="Reservation Time" value={this.props.reservation.reserve_time}></input>
+				<input type="text" name="seats" onChange={this.props.handleInput} placeholder="Seats" value={this.props.reservation.seats}></input>
 			</div>
 				<button type="submit">Edit</button>
 			</form>

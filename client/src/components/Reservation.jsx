@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReservationForm from './ReservationForm';
+import SearchByEmail from './SearchByEmail'
 
 class Reservation extends Component {
 	constructor(props) {
@@ -134,7 +135,7 @@ class Reservation extends Component {
     reservationEdit(data, e){
       e.preventDefault();
       console.log('reservation Edit call triggered----')
-      console.log(data.id, data);
+      console.log(data.id, 'this is the data id', data, 'this is the data');
      fetch(`/api/reservations/${data.id}`, {
        method: 'PUT',
        headers: {
@@ -145,6 +146,7 @@ class Reservation extends Component {
         .then(res => {
           this.setState({
             reservationStatus: 'edit',
+            reservation: data
           })
           console.log('reservation edited')
          this.getReservationByEmail()
