@@ -7,14 +7,15 @@ class Reservation extends Component {
 		super(props)
 		this.state = {
 			reservation: {
-	  			firstName: props.reservation ? props.reservation.first_name : '',
-	  			lastName: props.reservation ? props.reservation.last_name : '',
+	  			first_name: props.reservation ? props.reservation.first_name : '',
+	  			last_name: props.reservation ? props.reservation.last_name : '',
 	  			email: props.reservation ? props.reservation.email : '',
 	  			phone: props.reservation ? props.reservation.telephone : '',
 	  			date: props.reservation ? props.reservation.reserve_date : '',
 	  			time: props.reservation ? props.reservation.reserve_time : '',
 	  			seats: props.reservation ? props.reservation.seats : '',
-					mesa_id: props.reservation ? props.reservation.mesa_id : '',
+				mesa_id: props.reservation ? props.reservation.mesa_id : '',
+				id: props.reservation ? props.reservation.id : '',
 			},
 			allReservations: null,
 			dataLoaded: false,
@@ -32,31 +33,17 @@ class Reservation extends Component {
     this.getReservationByEmail = this.getReservationByEmail.bind(this);
     this.reservationEdit = this.reservationEdit.bind(this);
     this.reservationDelete = this.reservationDelete.bind(this);
+
     this.getAllMesas = this.getAllMesas.bind(this);
 	}
 
   componentDidMount(){
-<<<<<<< HEAD
+
       this.getReservation();
 			this.getAllMesas();
-=======
-    // if (this.state.reservationStatus === 'edit') {
-    // 	fetch(`/api/reservations/${this.state.reservation.id}`)
-    // 	.then(res => res.json())
-    // 	.then(res => {
-    // 		this.setState({
-    // 			dataLoaded: true,
-    // 			reservation: res.data.reservation,
-    // 		})
-    // 	}).catch(err => console.log(err))
-    // }
 
-    return(
-      this.getReservation()
+	}
 
-    )
->>>>>>> readding
-  };
 
   handleInputChange(e){
 		e.preventDefault();
@@ -67,6 +54,8 @@ class Reservation extends Component {
       [name]: value,
     })
   }
+
+
 
   getReservation(event){
     fetch('/api/reservations/')
@@ -91,6 +80,7 @@ class Reservation extends Component {
         }).catch(err => console.log(err));
     }
 
+<<<<<<< HEAD
 	getReservationByEmail(event, email){
 	      fetch(`/api/reservations/email/${this.state.email}`)
 	        .then(res => res.json())
@@ -116,15 +106,18 @@ class Reservation extends Component {
 	 	 }
 
 	reservationSubmit(method, e, id) {
+=======
+  reservationSubmit(method, e) {
+>>>>>>> Update functionality working
       e.preventDefault();
       console.log('new reservation made')
-      console.log(this.state, 'this is the state')
+      console.log(this.state, 'this is the state from submit')
       fetch(`/api/reservations/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(id),
+        body: JSON.stringify(),
       }).then(res => res.json())
       .then(res => {
         this.getReservation();
@@ -147,14 +140,22 @@ class Reservation extends Component {
     reservationEdit(data, e){
       e.preventDefault();
       console.log('reservation Edit call triggered----')
-      console.log(data.id, 'this is the data id', data, 'this is the data');
-
+      console.log(data, 'this is data reservationstate')
      fetch(`/api/reservations/${data.id}`, {
        method: 'PUT',
        headers: {
          'Content-Type': 'application/json',
        },
-       body: JSON.stringify(data),
+       body: JSON.stringify({
+       	first_name: data.first_name,
+       	last_name: data.last_name,
+       	email: data.email,
+       	telephone: data.telephone,
+       	mesa_id: data.mesa_id,
+       	reserve_date: data.reserve_date,
+       	reserve_time: data.reserve_time,
+       	seats: data.seats
+       }),
       }).then(res => res.json())
         .then(res => {
         	console.log('reservation editor res value is ', res)
@@ -188,23 +189,30 @@ class Reservation extends Component {
 	    <div className='reservation'>
 	      <ReservationForm reservationSubmit={this.reservationSubmit}
                          handleInput={this.handleInputChange}
-	                       state={this.state}
+	                     state={this.state}
                          dataLoaded={this.state.dataLoaded}
+<<<<<<< HEAD
 												 reservationInfo={this.state.reservation}
 												 next={this.moveNext}
 												 allReservations={this.state.allReservations}
 												 mesas={this.state.allMesas} />
 	    </div>
+=======
+						 reservationInfo={this.state.reservation}
+						 next={this.moveNext}
+						 allReservations={this.state.allReservations} />
+>>>>>>> Update functionality working
 	      {this.state.dataLoaded ? (
         <SearchByEmail  handleInput={this.handleInputChange}
-                  getReservationByEmail={this.getReservationByEmail}
-                  allReservations={this.state.allReservations}
-                  dataLoaded={this.state.dataLoaded}
-                  searched={this.state.searched}
-                  reservationStatus={this.state.reservationStatus}
-                  reservationEdit={this.reservationEdit}
-                  reservationDelete={this.reservationDelete}
-                  state={this.state} />
+        			  
+	                  getReservationByEmail={this.getReservationByEmail}
+	                  allReservations={this.state.allReservations}
+	                  dataLoaded={this.state.dataLoaded}
+	                  searched={this.state.searched}
+	                  reservationStatus={this.state.reservationStatus}
+	                  reservationEdit={this.reservationEdit}
+	                  reservationDelete={this.reservationDelete}
+	                  state={this.state} />
                    ) : (
                   <p>Loading reservation data...</p>
                    )}
