@@ -47,16 +47,22 @@ table {
 	border-spacing: 0;
 }
 /*Styling begins below */
+
+#root{
+	height: 100%;
+}
+
 .App{
 	display: flex;
 	flex-direction: column;
+	background-color: blue;
 }
 
 .header{
 	display: flex;
 	align-items: flex-start;
+	background-color: purple;
 	top: 0;
-	width: 100%;
 
 }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import TableReservation from './TableReservation';
 
-class ReservationForm extends React.Component {
+class ReservationForm extends Component {
 	constructor(props) {
   	super(props);
 		this.state = {
@@ -22,7 +22,8 @@ displayTable() {
 		fireRedirect: true,
 		redirectPath: '/table',
 		dataLoaded: this.props.dataLoaded,
-	})
+	});
+
 }
 
     render() {
@@ -49,6 +50,7 @@ displayTable() {
 							<select  type="text"
 	        			name="reserve_time"
 	        			onChange={this.props.handleInput} required >
+								<option value=" ">Choose Time</option>
 								<option value="1:00 PM">1:00 PM</option>
 								<option value="2:00 PM">2:00 PM</option>
 								<option value="3:00 PM">3:00 PM</option>
@@ -64,6 +66,7 @@ displayTable() {
 	        		<select type="number" placeholder="Seats"
 	         			name="seats"
 	        			onChange={this.props.handleInput} required >
+								<option value=" "> </option>
 								<option value="2">2</option>
 								<option value="3">3</option>
 								<option value="4">4</option>
@@ -72,7 +75,7 @@ displayTable() {
 								<option value="7">7</option>
 								<option value="8">8</option>
 	        		</select>
-							<input type="submit" value="next"  />
+							<input type="submit" value="next" />
 						</form>
 					</div>
 				) : (
@@ -86,12 +89,3 @@ displayTable() {
 )}}
 
 export default ReservationForm;
-
-{/* onSubmit={e => this.props.reservationSubmit('POST', e, this.props.state) }
-
-  onSubmit={() => this.props.moveNext}
-
-{this.props.handleInput &&
-	 }
-
-*/}
