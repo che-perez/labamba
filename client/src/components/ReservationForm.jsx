@@ -84,7 +84,8 @@ displayTable() {
 														state={this.props.state}
 														dataLoaded={this.props.dataLoaded}
 														reservationInfo={this.props.reservationInfo}
-														allReservations={this.props.allReservations} /> ) }
+														allReservations={this.props.allReservations}
+														mesas={this.props.mesas} /> ) }
 </div>
 )}}
 
