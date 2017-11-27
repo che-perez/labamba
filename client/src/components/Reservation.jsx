@@ -28,21 +28,34 @@ class Reservation extends Component {
 		this.reservationSubmit = this.reservationSubmit.bind(this);
     this.getReservation = this.getReservation.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-		this.moveNext = this.moveNext.bind(this);
-<<<<<<< HEAD
-		this.getReservationByEmail = this.getReservationByEmail.bind(this);
-		this.getAllMesas = this.getAllMesas.bind(this);
-
-=======
+		this.moveNext = this.moveNext.bind(this);		
     this.getReservationByEmail = this.getReservationByEmail.bind(this);
     this.reservationEdit = this.reservationEdit.bind(this);
     this.reservationDelete = this.reservationDelete.bind(this);
->>>>>>> passed down DELETE and PUT methods as props to ReservationInfo component
+    this.getAllMesas = this.getAllMesas.bind(this);
 	}
 
   componentDidMount(){
+<<<<<<< HEAD
       this.getReservation();
 			this.getAllMesas();
+=======
+    // if (this.state.reservationStatus === 'edit') {
+    // 	fetch(`/api/reservations/${this.state.reservation.id}`)
+    // 	.then(res => res.json())
+    // 	.then(res => {
+    // 		this.setState({
+    // 			dataLoaded: true,
+    // 			reservation: res.data.reservation,
+    // 		})
+    // 	}).catch(err => console.log(err))
+    // }
+
+    return(
+      this.getReservation()
+
+    )
+>>>>>>> readding
   };
 
   handleInputChange(e){
@@ -70,7 +83,6 @@ class Reservation extends Component {
       fetch(`/api/reservations/email/${this.state.email}`)
         .then(res => res.json())
         .then(res => {          
-          console.log(this, 'this is this from getReservationByEmail')
           this.setState({
             allReservations: res.data.reservation,
             dataLoaded: true,
@@ -136,6 +148,7 @@ class Reservation extends Component {
       e.preventDefault();
       console.log('reservation Edit call triggered----')
       console.log(data.id, 'this is the data id', data, 'this is the data');
+
      fetch(`/api/reservations/${data.id}`, {
        method: 'PUT',
        headers: {
@@ -144,11 +157,13 @@ class Reservation extends Component {
        body: JSON.stringify(data),
       }).then(res => res.json())
         .then(res => {
+        	console.log('reservation editor res value is ', res)
+        	console.log( data, 'this is the data');
           this.setState({
             reservationStatus: 'edit',
-            reservation: data
+            reservation: res.data
           })
-          console.log('reservation edited')
+          
          this.getReservationByEmail()
        }).catch(err=> console.log(err))
     }
