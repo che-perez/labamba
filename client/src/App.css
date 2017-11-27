@@ -169,6 +169,24 @@ body{
 	border-width: 2px;
 }
 
+.reservationForm{
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="submit"] {
+	background: none;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	padding: 0;
+}
+
 .table{
 	height: 19px;
 	width: 19px;
