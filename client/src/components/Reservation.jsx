@@ -80,7 +80,7 @@ class Reservation extends Component {
         }).catch(err => console.log(err));
     }
 
-<<<<<<< HEAD
+
 	getReservationByEmail(event, email){
 	      fetch(`/api/reservations/email/${this.state.email}`)
 	        .then(res => res.json())
@@ -106,9 +106,6 @@ class Reservation extends Component {
 	 	 }
 
 	reservationSubmit(method, e, id) {
-=======
-  reservationSubmit(method, e) {
->>>>>>> Update functionality working
       e.preventDefault();
       console.log('new reservation made')
       console.log(this.state, 'this is the state from submit')
@@ -191,17 +188,11 @@ class Reservation extends Component {
                          handleInput={this.handleInputChange}
 	                     state={this.state}
                          dataLoaded={this.state.dataLoaded}
-<<<<<<< HEAD
 												 reservationInfo={this.state.reservation}
 												 next={this.moveNext}
 												 allReservations={this.state.allReservations}
 												 mesas={this.state.allMesas} />
 	    </div>
-=======
-						 reservationInfo={this.state.reservation}
-						 next={this.moveNext}
-						 allReservations={this.state.allReservations} />
->>>>>>> Update functionality working
 	      {this.state.dataLoaded ? (
         <SearchByEmail  handleInput={this.handleInputChange}
         			  
