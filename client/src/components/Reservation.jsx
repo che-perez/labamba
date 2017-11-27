@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ReservationForm from './ReservationForm';
 
-
-
 class Reservation extends Component {
 	constructor(props) {
 		super(props)
@@ -19,17 +17,24 @@ class Reservation extends Component {
 			},
 			allReservations: null,
 			dataLoaded: false,
+			fireRedirect: false,
+			redirect: null,
+			searched: false,
+			reservationStatus: '',
+			allMesas: {},
+			allMesasLoaded: false,
 		}
 		this.reservationSubmit = this.reservationSubmit.bind(this);
     this.getReservation = this.getReservation.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
 		this.moveNext = this.moveNext.bind(this);
+		this.getReservationByEmail = this.getReservationByEmail.bind(this);
+		this.getAllMesas = this.getAllMesas.bind(this);
 	}
 
   componentDidMount(){
-    return(
-      this.getReservation()
-    )
+      this.getReservation();
+			this.getAllMesas();
   };
 
   handleInputChange(e){
@@ -53,7 +58,30 @@ class Reservation extends Component {
       }).catch(err => console.log(err));
   }
 
-//added redirect for tables component
+	getReservationByEmail(event, email){
+	      fetch(`/api/reservations/email/${this.state.email}`)
+	        .then(res => res.json())
+	        .then(res => {
+	          console.log(this, 'this is this from getReservationByEmail')
+	          this.setState({
+	            allReservations: res.data.reservation,
+	            dataLoaded: true,
+	            searched: true,
+	        })
+	        }).catch(err => console.log(err));
+	    }
+
+	getAllMesas(){
+	 		 fetch('/api/reservations/mesas')
+	 		 .then(res => res.json())
+	 		 .then(res => {
+	 			 this.setState({
+	 				 allMesas: res.data.mesas,
+					 allMesasLoaded: true,
+	 			 })
+	 		 }).catch(err => console.log(err));
+	 	 }
+
 	reservationSubmit(method, e, id) {
       e.preventDefault();
 	  	console.log('new reservation made')
@@ -67,8 +95,11 @@ class Reservation extends Component {
 	  	}).then(res => res.json())
       .then(res => {
         this.getReservation();
+				this.getAllMesas();
 	  	})
 	 }
+
+
 
 	 moveNext(){
 		 return(
@@ -88,7 +119,8 @@ class Reservation extends Component {
                          dataLoaded={this.state.dataLoaded}
 												 reservationInfo={this.state.reservation}
 												 next={this.moveNext}
-												 allReservations={this.state.allReservations} />
+												 allReservations={this.state.allReservations}
+												 mesas={this.state.allMesas} />
 	    </div>
 	  )
 	}

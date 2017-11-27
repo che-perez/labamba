@@ -47,36 +47,61 @@ table {
 	border-spacing: 0;
 }
 /*Styling begins below */
+
+html{
+	height: 100%;
+}
+
+body{
+	height: 100%;
+}
+
+#root{
+	margin: 0;
+}
+
 .App{
+	margin: 0;
 	display: flex;
 	flex-direction: column;
+	background-color: blue;
 }
 
 .header{
+	overflow: hidden;
 	display: flex;
-	align-items: flex-start;
-	top: 0;
-	width: 100%;
-
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	background-image: url('/public/restaurant.png');
 }
 
 .nav ul li{
 	display: inline-block;
+	text-align: center;
+	text-decoration: none;
 	padding: 3px;
 	border-style: solid;
 	border-color: green;
 	border-width: 2px;
+	font-size: 30px;
+	color: white;
 }
 
 .phoneHours{
 	align-self: flex-start;
 	height: 70px;
-	width: 100px;
+	width: 200px;
 	border-style: solid;
 	border-color: coral;
 	border-width: 2px;
+	color: white;
+	margin-left: -8%;
 }
 
+.social-media{
+	margin-right: inherit;
+}
 
 .sm-icon{
 	transform: scale(.2);
@@ -142,6 +167,24 @@ table {
 	border-style: solid;
 	border-color: blue;
 	border-width: 2px;
+}
+
+.reservationForm{
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="submit"] {
+	background: none;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	padding: 0;
 }
 
 .table{
