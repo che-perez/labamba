@@ -1,5 +1,4 @@
 import React from 'react';
-import MapBox from './MapBox';
 import ContactBox from './ContactBox';
 import HoursBox from './HoursBox';
 
