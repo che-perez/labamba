@@ -35,7 +35,7 @@ render(){
 
 <div className='tableReservationDiv'>
   <form className='tableReservation' onSubmit={e => this.props.reservationSubmit('POST', e, this.props.state) } >
-      <div>
+      <div className='tablesBoxBg'>
           {mesas.map(reserved => {
             console.log(this.props.state.seats != reserved.seats);
               if(reserved.disabled){
