@@ -1,11 +1,25 @@
 import React from 'react';
+import ReservationInfo from './ReservationInfo'
 
-function ListedReservations(){
+function ListedReservations(props){
   return(
     <div className='listedReservations'>
-      <p>map the reservations with info in a div that has edit and delete reservation</p>
+		    	{console.log(props)}    
+		    	{props.allReservations.map(reservation => {
+        			return <ReservationInfo key={reservation.id} 
+        			reservationStatus={props.reservationStatus} 
+        			reservation={reservation} 
+        			handleInput={props.handleInput}
+        			reservationEdit={props.reservationEdit}
+        			reservationDelete={props.reservationDelete}
+        			state={props.state}/>
+      })}
+
     </div>
   )
 }
 
 export default ListedReservations;
+
+
+

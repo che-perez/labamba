@@ -42,13 +42,12 @@ Reservations.update = (reservation, id) => {
 		last_name = $2,
 		email = $3,
 		telephone = $4,
-		made_time = $5,
-		reserve_date = $6,
-		reserve_time = $7,
-		seats = $8
-		WHERE id = $9
+		reserve_date = $5,
+		reserve_time = $6,
+		seats = $7
+		WHERE id = $8
 		RETURNING *`,
-		[reservation.first_name, reservation.last_name, reservation.email, reservation.telephone, reservation.made_time, reservation.reserve_date, reservation.reserve_time, reservation.seats, id]
+		[reservation.first_name, reservation.last_name, reservation.email, reservation.telephone, reservation.reserve_date, reservation.reserve_time, reservation.seats, id]
 	);
 };
 
