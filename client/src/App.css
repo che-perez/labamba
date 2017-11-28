@@ -155,15 +155,25 @@ color: white;
 }
 
 .contactBox{
-	background-color: green;
+	background-color: rgba(119, 119, 119, 0.35);
 	margin: 0 auto;
-	margin-left: 50px;
+	margin-left: 250px;
+	margin-top: 150px;
 	float: left;
+	border: 5px solid black;
 }
 .contact-header {
-	font-family: 'Great Vibes', cursive;
+	font-family: 'Oswald', sans-serif;
 	color: white;
 	font-size: 36px;
+	padding-left: 10px;
+}
+
+.contact-info {
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	font-size: 22px;
+	padding: 10px;
 }
 
 .mapBox{
@@ -171,9 +181,26 @@ color: white;
 }
 
 .hoursBox{
-	background-color: red;
-	margin: 0 auto;	
+	background-color: rgba(119, 119, 119, 0.35);
+	margin: 0 auto;
+	margin-left: 150px;	
+	margin-top: 150px;
 	float: right;
+	border: 5px solid black;
+}
+
+.hours-header {
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	font-size: 36px;
+	padding-left: 10px;
+}
+
+.hours {
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	font-size: 22px;
+	padding: 10px;
 }
 
 .next{
