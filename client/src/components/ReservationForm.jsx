@@ -29,6 +29,9 @@ displayTable() {
     render() {
   		return(
 				<div>
+					<div className="make-reservation-here">
+						<p>Please Make Your Reservation Below</p>
+					</div>
 				{ this.state.display ?
 	    	(<div className='reservationForm'>
 	      		<form id ='formId' className="add-reservation" onSubmit={this.displayTable} >
