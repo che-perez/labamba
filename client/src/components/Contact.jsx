@@ -8,8 +8,7 @@ function Contact(){
     <div className='contact'>
       <MapBox />
       <ContactBox />
-      <HoursBox />
-      <p>contact info here</p>
+      <HoursBox />      	
     </div>
   )
 }
