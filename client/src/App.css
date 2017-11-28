@@ -47,19 +47,6 @@ table {
 	border-spacing: 0;
 }
 /*Styling begins below */
-<<<<<<< HEAD
-
-html{
-	height: 100%;
-}
-
-body{
-	height: 100%;
-}
-
-#root{
-	margin: 0;
-=======
 body{
 	margin: 0 auto;
 	background-image: url('./images/testImageThree.jpg');
@@ -67,25 +54,14 @@ body{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	position: fixed;
->>>>>>> css homepage
 }
 
 .App{
-	margin: 0;
 	display: flex;
 	flex-direction: column;
-	background-color: blue;
 }
 
 .header{
-<<<<<<< HEAD
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: black;
-	background-image: url('/public/restaurant.png');
-=======
 	/*background-color: red;*/
 	/*display: flex;*/
 	/*align-items: flex-start;*/
@@ -97,36 +73,15 @@ body{
 .nav {
 	margin-top: 100px;
   margin-left: 440px;
-<<<<<<< HEAD
 
->>>>>>> css homepage
-=======
->>>>>>> css added logo
 }
 
 .nav ul li{
 	display: inline-block;
-	text-align: center;
-	text-decoration: none;
 	padding: 3px;
 	border-style: ridge;
 	border-color: HEX E88C00;
 	border-width: 2px;
-<<<<<<< HEAD
-	font-size: 30px;
-	color: white;
-}
-
-.phoneHours{
-	align-self: flex-start;
-	height: 70px;
-	width: 200px;
-	border-style: solid;
-	border-color: coral;
-	border-width: 2px;
-	color: white;
-	margin-left: -8%;
-=======
 	border-radius: 4.5px;
 	margin:1.5px;
 	color: white;
@@ -143,7 +98,7 @@ body{
 	font-size: 75px;
 }
 
-script{
+span{
 	font-size: 30px;
 }
 
@@ -158,12 +113,8 @@ script{
 	border-radius: 3px;*/
   /*align-self: flex-start;*/
 	/*background-color: yellow;*/
->>>>>>> css homepage
 }
 
-.social-media{
-	margin-right: inherit;
-}
 
 .sm-icon{
 	margin-top: -700px;
@@ -233,24 +184,6 @@ color: white;
 	border-style: solid;
 	border-color: blue;
 	border-width: 2px;
-}
-
-.reservationForm{
-
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-input[type="submit"] {
-	background: none;
-	border: 0;
-	color: inherit;
-	font: inherit;
-	line-height: normal;
-	overflow: visible;
-	padding: 0;
 }
 
 .table{
