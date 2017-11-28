@@ -53,7 +53,6 @@ body{
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	position: fixed;
 }
 
 .App{
@@ -71,31 +70,39 @@ body{
 }
 
 .nav {
-	margin-top: 100px;
-  margin-left: 440px;
-
+	position: relative;
+	margin-top: -7.35px;
+	margin-left: 400px;
 }
 
 .nav ul li{
 	display: inline-block;
 	padding: 3px;
 	border-style: ridge;
-	border-color: HEX E88C00;
+	border-color: rgb(140, 103, 58);
 	border-width: 2px;
 	border-radius: 4.5px;
 	margin:1.5px;
 	color: white;
+	margin: 2px;
 	/*box-shadow: 1px 1px 8px white;*/
 }
+.nav ul li:hover{
+	color: red;
+	box-shadow: 2.5px 2.5px 2.5px white;
+	transition: width 2s;
+	/*border-color: white;*/
 
+
+}
 .logo{
-	position:relative;
-	margin-top: 40px;
-	margin-left: -200px;
+	margin-top: 20px;
+	margin-left: 275px;
 	color: beige;
 	font-family: 'Great Vibes', cursive;
-	margin-left: 400px;
-	font-size: 75px;
+	font-size: 85px;
+	text-shadow: 1px 0px 1px  black;
+	font-weight:200;
 }
 
 span{
@@ -108,25 +115,21 @@ span{
 	width: 200px;
 	border-style: solid;
 	color:white;
-	/*border-color: coral;*/
-	/*border-width: 2px;
-	border-radius: 3px;*/
-  /*align-self: flex-start;*/
-	/*background-color: yellow;*/
 }
 
-
+.social-media{
+	float: right;
+	top: -52px;
+	position: absolute;
+	margin-left: 85%;
+}
 .sm-icon{
-	margin-top: -700px;
-	margin-bottom: 200px;
-	margin-left: 980px;
 	transform: scale(.2);
 	border-style: solid;
 	border-style: solid;
 	outline: none;
 	border-width: 2px;
-	background-color: white;
-	/*border-color: yellow;*/
+	border: solid rgb(140, 103, 58);
 }
 
 .smLink{
@@ -135,15 +138,50 @@ span{
 	width: 30px;
 }
 
-.mainImage{
-}
-
 .reservation{
-
+	margin-bottom: 200px;
 }
 
-.reservationForm{
+.add-reservation{
 	display: flex;
+	flex-direction: column;
+  margin-left: 60px;
+	width: 500px;
+	height: 300px;
+	border-radius: 4px;
+}
+
+input{
+margin-bottom: 12.5px;
+	outline-color: none;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	background-color: rgba(0, 0, 0, 0.3);
+	font-size: 20px;
+	color: white;
+}
+
+.make-reservation-here{
+	margin-top: 20px;
+	margin-left: 130px;
+	color: red;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+.reservationForm{
+	margin-top: 25px;
+	margin-left: 300px;
+	opacity: 4;
+	border:2px solid;
+	box-shadow: 2.5px 2.5px 2.5px rgb(71, 48, 22);
+	width: 600px;
+	background-color: rgba( 0, 0, 0, 0.8);
+}
+
+.submitBut{
+	margin: 0 auto;
+	width: 60px;
 }
 
 .about{
@@ -200,7 +238,7 @@ span{
 .hoursBox{
 	background-color: rgba(119, 119, 119, 0.35);
 	margin: 0 auto;
-	margin-left: 150px;	
+	margin-left: 150px;
 	margin-top: 150px;
 	float: right;
 	border: 5px solid black;
@@ -263,10 +301,13 @@ span{
 }
 
 .footer{
+	position: fixed;
+	left: 0px;
+	bottom: 0;
+	height: 20px;
 	color: white;
-	margin-top: 325px;
-	margin-left: 550px;
-	/*position: fixed;*/
-
-
+	width: 100%;
+	text-align: center;
+	background-color: black;
+	opacity: .5;
 }

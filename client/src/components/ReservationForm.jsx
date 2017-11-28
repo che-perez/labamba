@@ -29,8 +29,13 @@ displayTable() {
     render() {
   		return(
 				<div>
+
 				{ this.state.display ?
 	    	(<div className='reservationForm'>
+<div className="form-opacity">
+					<div className="make-reservation-here">
+						<p>Please Make Your Reservation Below</p>
+					</div>
 	      		<form id ='formId' className="add-reservation" onSubmit={this.displayTable} >
 	        		<input type="text" placeholder="First Name"
 	        			name="first_name"
@@ -71,8 +76,9 @@ displayTable() {
 								<option value="4">4</option>
 								<option value="8">8</option>
 	        		</select>
-							<input type="submit" value="next" />
+							<input type="submit" className="submitBut" value="next" />
 						</form>
+					</div>
 					</div>
 				) : (
 					<TableReservation reservationSubmit={this.props.reservationSubmit}
