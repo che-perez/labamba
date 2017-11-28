@@ -8,7 +8,7 @@ const Header = () => {
 	return(
 		<div className="header">
 			<PhoneHours />
-			{/*add logo here? */}
+			<div className="logo">LaBamba Mofongo</div>
 			<Nav />
 			<SocialMedia />
 		</div>
