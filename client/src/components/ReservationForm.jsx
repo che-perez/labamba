@@ -50,7 +50,7 @@ displayTable() {
 							<select  type="text"
 	        			name="reserve_time"
 	        			onChange={this.props.handleInput} required >
-								<option value=" ">Choose Time</option>
+								<option>--Choose Time--</option>
 								<option value="1:00 PM">1:00 PM</option>
 								<option value="2:00 PM">2:00 PM</option>
 								<option value="3:00 PM">3:00 PM</option>
@@ -66,13 +66,9 @@ displayTable() {
 	        		<select type="number" placeholder="Seats"
 	         			name="seats"
 	        			onChange={this.props.handleInput} required >
-								<option value=" "> </option>
+								<option>--Table For--</option>
 								<option value="2">2</option>
-								<option value="3">3</option>
 								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
 								<option value="8">8</option>
 	        		</select>
 							<input type="submit" value="next" />

@@ -15,8 +15,11 @@ filterReservations(){
   let mesas = this.props.mesas;
   let currentRez= this.props.allReservations.filter(rez => rez.reserve_time == this.props.state.reserve_time && rez.reserve_date == this.props.state.reserve_date);
   let tableIsTaken = mesas.map(mesa => {
-    mesa.taken = currentRez.some(rez => rez.mesa_id == mesa.id)
-    console.log(mesa.taken);
+   if(currentRez.some(rez => rez.mesa_id == mesa.id)) {
+      mesa.disabled = true
+      } 
+    console.log(mesa.disabled);
+   console.log(this.props.state.seats);
     return mesa
   })
   return tableIsTaken
@@ -31,17 +34,22 @@ render(){
   <form className='tableReservation' onSubmit={e => this.props.reservationSubmit('POST', e, this.props.state) } >
       <div>
           {mesas.map(reserved => {
-            console.log(reserved);
-              if(reserved.taken){
+            console.log(this.props.state.seats != reserved.seats);
+              if(reserved.disabled){
                 return(
-                <input className={`tablefor${reserved.seats}`} type='radio' value={reserved.id} id='i' name='mesa_id' onChange={this.props.handleInput} disabled />
+                <input key={reserved.id} className={`tablefor${reserved.seats}`} type='radio' value={reserved.id} id='i' name='mesa_id' onChange={this.props.handleInput} disabled />
                 )
-              } else {
-                return(
-                <input className={`tablefor${reserved.seats}`} type='radio' value={reserved.id} id='i' name='mesa_id' onChange={this.props.handleInput} />
+              } if(this.props.state.seats != reserved.seats) {
+               return(
+                <input key={reserved.id} className={`tablefor${reserved.seats}`} type='radio' value={reserved.id} id='i' name='mesa_id' onChange={this.props.handleInput} disabled />
+                )
+                   } else {
+               return(
+                <input key={reserved.id} className={`tablefor${reserved.seats}`} type='radio' value={reserved.id} id='i' name='mesa_id' onChange={this.props.handleInput} />
                 )
               }
-          })}
+               }
+          )}
 
      <input type='submit' value='Reserve Now' />
    </div>
