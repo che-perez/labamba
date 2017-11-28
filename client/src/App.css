@@ -47,68 +47,86 @@ table {
 	border-spacing: 0;
 }
 /*Styling begins below */
-
-html{
-	height: 100%;
-}
-
 body{
-	height: 100%;
-}
-
-#root{
-	margin: 0;
+	margin: 0 auto;
+	background-image: url('./images/testImageThree.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: fixed;
 }
 
 .App{
-	margin: 0;
 	display: flex;
 	flex-direction: column;
-	background-color: blue;
 }
 
 .header{
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: black;
-	background-image: url('/public/restaurant.png');
+	/*background-color: red;*/
+	/*display: flex;*/
+	/*align-items: flex-start;*/
+	top: 0;
+	width: 100%;
+	/*opacity: .3*/
+}
+
+.nav {
+	margin-top: 100px;
+  margin-left: 440px;
+
 }
 
 .nav ul li{
 	display: inline-block;
-	text-align: center;
-	text-decoration: none;
 	padding: 3px;
-	border-style: solid;
-	border-color: green;
+	border-style: ridge;
+	border-color: HEX E88C00;
 	border-width: 2px;
-	font-size: 30px;
+	border-radius: 4.5px;
+	margin:1.5px;
 	color: white;
+	/*box-shadow: 1px 1px 8px white;*/
+}
+
+.logo{
+	position:relative;
+	margin-top: 40px;
+	margin-left: -200px;
+	color: beige;
+	font-family: 'Great Vibes', cursive;
+	margin-left: 400px;
+	font-size: 75px;
+}
+
+span{
+	font-size: 30px;
 }
 
 .phoneHours{
-	align-self: flex-start;
-	height: 70px;
+	line-height: .9;
+	height: 0px;
 	width: 200px;
 	border-style: solid;
-	border-color: coral;
-	border-width: 2px;
-	color: white;
-	margin-left: -8%;
+	color:white;
+	/*border-color: coral;*/
+	/*border-width: 2px;
+	border-radius: 3px;*/
+  /*align-self: flex-start;*/
+	/*background-color: yellow;*/
 }
 
-.social-media{
-	margin-right: inherit;
-}
 
 .sm-icon{
+	margin-top: -700px;
+	margin-bottom: 200px;
+	margin-left: 980px;
 	transform: scale(.2);
 	border-style: solid;
 	border-style: solid;
-	border-color: blue;
+	outline: none;
 	border-width: 2px;
+	background-color: white;
+	/*border-color: yellow;*/
 }
 
 .smLink{
@@ -118,7 +136,6 @@ body{
 }
 
 .mainImage{
-
 }
 
 .reservation{
@@ -130,7 +147,7 @@ body{
 }
 
 .about{
-
+color: white;
 }
 
 .contact{
@@ -169,24 +186,6 @@ body{
 	border-width: 2px;
 }
 
-.reservationForm{
-
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-input[type="submit"] {
-	background: none;
-	border: 0;
-	color: inherit;
-	font: inherit;
-	line-height: normal;
-	overflow: visible;
-	padding: 0;
-}
-
 .table{
 	height: 19px;
 	width: 19px;
@@ -209,5 +208,10 @@ input[type="submit"] {
 }
 
 .footer{
+	color: white;
+	margin-top: 325px;
+	margin-left: 550px;
+	/*position: fixed;*/
+
 
 }
