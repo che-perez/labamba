@@ -6,7 +6,6 @@ import HoursBox from './HoursBox';
 function Contact(){
   return(
     <div className='contact'>
-      <MapBox />
       <ContactBox />
       <HoursBox />      	
     </div>
