@@ -25,13 +25,13 @@ class ReservationInfo extends Component {
   	const name = e.target.name;
     const value = e.target.value;
     console.log(e.target.value)
-    let fuckFace = this.props.reservation
-    console.log(fuckFace)
+    let peaches = this.props.reservation
+    console.log(peaches)
   	this.setState((prevState, props) => {
   		// const newReservation = {
   		// 	newReservation: prevState.reservation
   		// }
-  		const newReservation = Object.assign({}, fuckFace, {[name]: value})
+  		const newReservation = Object.assign({}, peaches, {[name]: value})
   		console.log(newReservation)
   		return {reservation: newReservation}
   	})
