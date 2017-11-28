@@ -68,24 +68,10 @@ class Reservation extends Component {
       }).catch(err => console.log(err));
     }
 
-    getReservationByEmail(event, email){
-      fetch(`/api/reservations/email/${this.state.email}`)
-        .then(res => res.json())
-        .then(res => {
-          this.setState({
-            allReservations: res.data.reservation,
-            dataLoaded: true,
-            searched: true,
-        })
-        }).catch(err => console.log(err));
-    }
-
-
 	getReservationByEmail(event, email){
 	      fetch(`/api/reservations/email/${this.state.email}`)
 	        .then(res => res.json())
 	        .then(res => {
-	          console.log(this, 'this is this from getReservationByEmail')
 	          this.setState({
 	            allReservations: res.data.reservation,
 	            dataLoaded: true,
