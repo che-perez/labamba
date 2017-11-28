@@ -155,7 +155,15 @@ color: white;
 }
 
 .contactBox{
-
+	background-color: green;
+	margin: 0 auto;
+	margin-left: 50px;
+	float: left;
+}
+.contact-header {
+	font-family: 'Great Vibes', cursive;
+	color: white;
+	font-size: 36px;
 }
 
 .mapBox{
@@ -163,7 +171,9 @@ color: white;
 }
 
 .hoursBox{
-
+	background-color: red;
+	margin: 0 auto;	
+	float: right;
 }
 
 .next{
