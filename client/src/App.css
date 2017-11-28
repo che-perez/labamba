@@ -47,43 +47,74 @@ table {
 	border-spacing: 0;
 }
 /*Styling begins below */
+body{
+	margin: 0 auto;
+	background-image: url('./images/testImageThree.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: fixed;
+}
+
 .App{
 	display: flex;
 	flex-direction: column;
 }
 
 .header{
-	display: flex;
-	align-items: flex-start;
+	/*background-color: red;*/
+	/*display: flex;*/
+	/*align-items: flex-start;*/
 	top: 0;
 	width: 100%;
+	/*opacity: .3*/
+}
+
+.nav {
+	margin-top: 275px;
+  margin-left: 440px;
 
 }
 
 .nav ul li{
 	display: inline-block;
 	padding: 3px;
-	border-style: solid;
-	border-color: green;
+	border-style: ridge;
+	border-color: HEX E88C00;
 	border-width: 2px;
+	border-radius: 4.5px;
+	margin:1.5px;
+	color: white;
+	/*box-shadow: 1px 1px 8px white;*/
+
+
 }
 
 .phoneHours{
-	align-self: flex-start;
-	height: 70px;
-	width: 100px;
+	line-height: .9;
+	height: 0px;
+	width: 200px;
 	border-style: solid;
-	border-color: coral;
-	border-width: 2px;
+	color:white;
+	/*border-color: coral;*/
+	/*border-width: 2px;
+	border-radius: 3px;*/
+  /*align-self: flex-start;*/
+	/*background-color: yellow;*/
 }
 
 
 .sm-icon{
+	margin-top: -700px;
+	margin-bottom: 200px;
+	margin-left: 980px;
 	transform: scale(.2);
 	border-style: solid;
 	border-style: solid;
-	border-color: blue;
+	outline: none;
 	border-width: 2px;
+	background-color: white;
+	/*border-color: yellow;*/
 }
 
 .smLink{
@@ -93,7 +124,6 @@ table {
 }
 
 .mainImage{
-
 }
 
 .reservation{
@@ -105,7 +135,7 @@ table {
 }
 
 .about{
-
+color: white;
 }
 
 .contact{
@@ -166,5 +196,9 @@ table {
 }
 
 .footer{
+	color: white;
+	margin-top: 325px;
+	/*position: fixed;*/
+
 
 }
