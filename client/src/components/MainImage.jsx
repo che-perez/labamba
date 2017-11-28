@@ -3,9 +3,8 @@ import React from 'react';
 function MainImage (){
   return(
     <div className='mainImage'>
-      <h1>MAIN BACKGROUND IMAGES HERE</h1>
+      <img src = './images/testImageThree.jpg'/>
     </div>
-  )
-}
-
+   )
+ }
 export default MainImage;

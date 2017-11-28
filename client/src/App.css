@@ -47,6 +47,7 @@ table {
 	border-spacing: 0;
 }
 /*Styling begins below */
+<<<<<<< HEAD
 
 html{
 	height: 100%;
@@ -58,6 +59,15 @@ body{
 
 #root{
 	margin: 0;
+=======
+body{
+	margin: 0 auto;
+	background-image: url('./images/testImageThree.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: fixed;
+>>>>>>> css homepage
 }
 
 .App{
@@ -68,12 +78,27 @@ body{
 }
 
 .header{
+<<<<<<< HEAD
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: black;
 	background-image: url('/public/restaurant.png');
+=======
+	/*background-color: red;*/
+	/*display: flex;*/
+	/*align-items: flex-start;*/
+	top: 0;
+	width: 100%;
+	/*opacity: .3*/
+}
+
+.nav {
+	margin-top: 275px;
+  margin-left: 440px;
+
+>>>>>>> css homepage
 }
 
 .nav ul li{
@@ -81,9 +106,10 @@ body{
 	text-align: center;
 	text-decoration: none;
 	padding: 3px;
-	border-style: solid;
-	border-color: green;
+	border-style: ridge;
+	border-color: HEX E88C00;
 	border-width: 2px;
+<<<<<<< HEAD
 	font-size: 30px;
 	color: white;
 }
@@ -97,6 +123,27 @@ body{
 	border-width: 2px;
 	color: white;
 	margin-left: -8%;
+=======
+	border-radius: 4.5px;
+	margin:1.5px;
+	color: white;
+	/*box-shadow: 1px 1px 8px white;*/
+
+
+}
+
+.phoneHours{
+	line-height: .9;
+	height: 0px;
+	width: 200px;
+	border-style: solid;
+	color:white;
+	/*border-color: coral;*/
+	/*border-width: 2px;
+	border-radius: 3px;*/
+  /*align-self: flex-start;*/
+	/*background-color: yellow;*/
+>>>>>>> css homepage
 }
 
 .social-media{
@@ -104,11 +151,16 @@ body{
 }
 
 .sm-icon{
+	margin-top: -700px;
+	margin-bottom: 200px;
+	margin-left: 980px;
 	transform: scale(.2);
 	border-style: solid;
 	border-style: solid;
-	border-color: blue;
+	outline: none;
 	border-width: 2px;
+	background-color: white;
+	/*border-color: yellow;*/
 }
 
 .smLink{
@@ -118,7 +170,6 @@ body{
 }
 
 .mainImage{
-
 }
 
 .reservation{
@@ -130,7 +181,7 @@ body{
 }
 
 .about{
-
+color: white;
 }
 
 .contact{
@@ -209,5 +260,9 @@ input[type="submit"] {
 }
 
 .footer{
+	color: white;
+	margin-top: 325px;
+	/*position: fixed;*/
+
 
 }
