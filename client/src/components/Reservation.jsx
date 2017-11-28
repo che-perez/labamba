@@ -188,11 +188,10 @@ class Reservation extends Component {
                          handleInput={this.handleInputChange}
 	                     state={this.state}
                          dataLoaded={this.state.dataLoaded}
-												 reservationInfo={this.state.reservation}
-												 next={this.moveNext}
-												 allReservations={this.state.allReservations}
-												 mesas={this.state.allMesas} />
-	    </div>
+						 reservationInfo={this.state.reservation}
+						 next={this.moveNext}
+						 allReservations={this.state.allReservations}
+						 mesas={this.state.allMesas} />
 	      {this.state.dataLoaded ? (
         <SearchByEmail  handleInput={this.handleInputChange}
         			  
