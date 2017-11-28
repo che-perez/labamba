@@ -29,7 +29,7 @@ class Reservation extends Component {
 		this.reservationSubmit = this.reservationSubmit.bind(this);
     this.getReservation = this.getReservation.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-		this.moveNext = this.moveNext.bind(this);		
+		this.moveNext = this.moveNext.bind(this);
     this.getReservationByEmail = this.getReservationByEmail.bind(this);
     this.reservationEdit = this.reservationEdit.bind(this);
     this.reservationDelete = this.reservationDelete.bind(this);
@@ -71,7 +71,7 @@ class Reservation extends Component {
     getReservationByEmail(event, email){
       fetch(`/api/reservations/email/${this.state.email}`)
         .then(res => res.json())
-        .then(res => {          
+        .then(res => {
           this.setState({
             allReservations: res.data.reservation,
             dataLoaded: true,
@@ -161,11 +161,11 @@ class Reservation extends Component {
             reservationStatus: 'edit',
             reservation: res.data
           })
-          
+
          this.getReservationByEmail()
        }).catch(err=> console.log(err))
     }
-    
+
 
     reservationDelete(id) {
        console.log('reservation deleted')
@@ -186,15 +186,16 @@ class Reservation extends Component {
 	    <div className='reservation'>
 	      <ReservationForm reservationSubmit={this.reservationSubmit}
                          handleInput={this.handleInputChange}
-	                     state={this.state}
+	                       state={this.state}
                          dataLoaded={this.state.dataLoaded}
-						 reservationInfo={this.state.reservation}
-						 next={this.moveNext}
-						 allReservations={this.state.allReservations}
-						 mesas={this.state.allMesas} />
+												 reservationInfo={this.state.reservation}
+												 next={this.moveNext}
+												 allReservations={this.state.allReservations}
+												 mesas={this.state.allMesas} />
+
 	      {this.state.dataLoaded ? (
         <SearchByEmail  handleInput={this.handleInputChange}
-        			  
+
 	                  getReservationByEmail={this.getReservationByEmail}
 	                  allReservations={this.state.allReservations}
 	                  dataLoaded={this.state.dataLoaded}
