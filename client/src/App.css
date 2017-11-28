@@ -115,11 +115,6 @@ span{
 	width: 200px;
 	border-style: solid;
 	color:white;
-	/*border-color: coral;*/
-	/*border-width: 2px;
-	border-radius: 3px;*/
-  /*align-self: flex-start;*/
-	/*background-color: yellow;*/
 }
 
 .social-media{
@@ -135,7 +130,6 @@ span{
 	outline: none;
 	border-width: 2px;
 	border: solid rgb(140, 103, 58);
-	background-color: white;
 }
 
 .smLink{
@@ -158,6 +152,7 @@ span{
 }
 
 input{
+margin-bottom: 12.5px;
 	outline-color: none;
 	border-left: none;
 	border-right: none;
@@ -175,7 +170,8 @@ input{
 	font-size: 20px;
 }
 .reservationForm{
-	margin-left: 290px;
+	margin-top: 25px;
+	margin-left: 300px;
 	opacity: 4;
 	border:2px solid;
 	box-shadow: 2.5px 2.5px 2.5px rgb(71, 48, 22);
