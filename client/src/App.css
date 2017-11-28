@@ -230,6 +230,17 @@ span{
 	border-width: 2px;
 }
 
+.tableReservationDiv{
+	display: flex;
+	flex-wrap: wrap;
+	height: 500px;
+	width: 500px;
+	border-style: solid;
+	border-style: solid;
+	border-color: purple;
+	border-width: 2px;
+}
+
 .tableReservation{
 	display: flex;
 	flex-wrap: wrap;
@@ -237,7 +248,7 @@ span{
 	width: 400px;
 	border-style: solid;
 	border-style: solid;
-	border-color: blue;
+	border-color: green;
 	border-width: 2px;
 }
 
@@ -250,6 +261,10 @@ span{
 	border-width: 2px;
 }
 
+.tablefor2 {
+	background-image:
+}
+
 .searchByEmail{
 
 }
@@ -260,6 +275,36 @@ span{
 
 .menu{
 
+}
+
+label > input{ /* HIDE RADIO */
+  display:none;
+}
+
+label > input + img { /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+	transform: scale(0.2);
+}
+
+label > input:disabled + img { /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+	opacity: 0.6;
+  filter: alpha(opacity=40);
+	transform: scale(0.2);
+}
+
+.imgFor2{
+	content: url('./components/public/tablefor2.png');
+}
+
+.imgFor4{
+	content: url('./components/public/tablefor4.png');
+}
+
+.imgFor8{
+	content: url('./components/public/tablefor8.png');
 }
 
 .footer{

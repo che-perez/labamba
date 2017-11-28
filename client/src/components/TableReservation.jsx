@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import tablefor2 from './public/tablefor2.png';
+import tablefor4 from './public/tablefor4.png';
+import tablefor8 from './public/tablefor8.png';
 
 class TableReservation extends Component {
   constructor(props) {
@@ -17,7 +20,7 @@ filterReservations(){
   let tableIsTaken = mesas.map(mesa => {
    if(currentRez.some(rez => rez.mesa_id == mesa.id)) {
       mesa.disabled = true
-      } 
+      }
     console.log(mesa.disabled);
    console.log(this.props.state.seats);
     return mesa
@@ -30,22 +33,31 @@ render(){
   console.log(mesas);
   return(
 
-<div>
+<div className='tableReservationDiv'>
   <form className='tableReservation' onSubmit={e => this.props.reservationSubmit('POST', e, this.props.state) } >
       <div>
           {mesas.map(reserved => {
             console.log(this.props.state.seats != reserved.seats);
               if(reserved.disabled){
                 return(
+                <label>
                 <input key={reserved.id} className={`tablefor${reserved.seats}`} type='radio' value={reserved.id} id='i' name='mesa_id' onChange={this.props.handleInput} disabled />
+                  <img className={`imgFor${reserved.seats.toString()}`} />
+                </label>
                 )
               } if(this.props.state.seats != reserved.seats) {
                return(
+                <label>
                 <input key={reserved.id} className={`tablefor${reserved.seats}`} type='radio' value={reserved.id} id='i' name='mesa_id' onChange={this.props.handleInput} disabled />
+                <img className={`imgFor${reserved.seats.toString()}`} />
+                </label>
                 )
                    } else {
                return(
+                <label>
                 <input key={reserved.id} className={`tablefor${reserved.seats}`} type='radio' value={reserved.id} id='i' name='mesa_id' onChange={this.props.handleInput} />
+                <img className={`imgFor${reserved.seats.toString()}`} />
+                </label>
                 )
               }
                }
