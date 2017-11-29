@@ -16,6 +16,10 @@ app.listen(PORT, () => {
   console.log(`Bailando La Bamba en ${PORT}`);
 });
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // This will be changed to whatever we creates the routes.
 const reservationsRoutes = require('./routes/reservationRoutes');
 app.use('/api/reservations', reservationsRoutes);
