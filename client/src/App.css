@@ -129,7 +129,6 @@ span{
 	border-style: solid;
 	outline: none;
 	border-width: 2px;
-	border: solid rgb(140, 103, 58);
 }
 
 .smLink{
@@ -231,10 +230,6 @@ margin-bottom: 12.5px;
 	padding: 10px;
 }
 
-.mapBox{
-
-}
-
 .hoursBox{
 	background-color: rgba(119, 119, 119, 0.35);
 	margin: 0 auto;
@@ -268,15 +263,33 @@ margin-bottom: 12.5px;
 	border-width: 2px;
 }
 
+.reserveBut{
+	position: absolute;
+}
+
+.tableReservationDiv{
+	display: flex;
+	flex-wrap: wrap;
+	height: 700px;
+	width: 600px;
+	border-style: solid;
+	border-style: solid;
+	border-width: 2px;
+	margin: auto;
+	box-shadow: 1px 1px 8px white;
+	justify-content: center;
+	align-items: center;
+}
+
 .tableReservation{
 	display: flex;
 	flex-wrap: wrap;
-	height: 400px;
-	width: 400px;
+	height: 700px;
+	width: 600px;
 	border-style: solid;
-	border-style: solid;
-	border-color: blue;
 	border-width: 2px;
+	justify-content: center;
+	align-items: center;
 }
 
 .table{
@@ -286,6 +299,10 @@ margin-bottom: 12.5px;
 	border-style: solid;
 	border-color: blue;
 	border-width: 2px;
+}
+
+.tablefor2 {
+	background-image:
 }
 
 .searchByEmail{
@@ -298,6 +315,56 @@ margin-bottom: 12.5px;
 
 .menu{
 
+}
+
+.tablesBoxBg{
+	display: flex;
+	margin-left: 0 auto;
+	flex-wrap: wrap;
+	background-color: black;
+	overflow: auto;
+}
+
+label > input{ /* HIDE RADIO */
+  display:none;
+}
+
+label > input + img { /* IMAGE STYLES */
+  cursor: pointer;
+  border: 2px solid transparent;
+	transform: scale(0.2);
+	margin: -62px -16px -100px -10px;
+	transition: 0.3s;
+}
+
+label > input:hover + img { /* IMAGE STYLES */
+  cursor: pointer;
+  border: 2px solid transparent;
+	transform: scale(0.3);
+}
+
+label > input:disabled + img { /* IMAGE STYLES */
+  cursor: default;
+  border: 2px solid transparent;
+	opacity: 0.3;
+  filter: alpha(opacity=40);
+	transform: scale(0.2);
+}
+
+label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
+  border: 7px solid green;
+}
+
+.imgFor2{
+	content: url('./components/public/tablefor2.png');
+}
+
+.imgFor4{
+	content: url('./components/public/tablefor4.png');
+}
+
+.imgFor8{
+	content: url('./components/public/tablefor8.png');
 }
 
 .footer{
