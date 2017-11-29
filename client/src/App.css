@@ -178,8 +178,7 @@ input[type="tel"]::-webkit-input-placeholder {
 	font-size: 20px;
 }
 .reservationForm{
-	margin-top: 25px;
-	margin-left: 300px;
+	margin-top: 60px;
 	opacity: 4;
 	border:2px solid;
 	box-shadow: 2.5px 2.5px 2.5px rgb(71, 48, 22);
@@ -351,7 +350,7 @@ margin-right: -100px;
 
 .prev-button {
 	font-size: 40px;
-	color: white;	
+	color: white;
 }
 
 
