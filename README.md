@@ -6,7 +6,8 @@ We created this app to provide our customers with a first-class restaurant-reser
 
 ## Languages, Frameworks & Libraries
 Express.js was used for the backend framework.  CRUD controlled how reservations were made, deleted and otherwise accessed.  React.js was used on the frontend to control how the website renders in the browser, changing components based on user behavior. We also used react-pdf-js to render the pdf menu in react.
-##Target Audience
+
+## Target Audience
 Target customer profile:
 -	appreciates ethnic (to wit, Spanish) cuisine
 o	sophisticated palette
@@ -28,5 +29,5 @@ Yarn was used as the package manager for project’s dependencies, in addition t
  
 
 ## Contributors
-Web Developers: Josué Perez, Dan Levenson, Illeana Ordenez, Robert Motión, MBA 
+Web Developers: Josué Pérez, Dan Levenson, Illeana Ordeñez, Robert Motión, MBA 
 
