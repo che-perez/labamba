@@ -370,7 +370,7 @@ label > input + img { /* IMAGE STYLES */
 	margin-top: 325px;
 	margin-left: 550px;
 /*	position: fixed;*/
-
+}
 
 label > input:hover + img { /* IMAGE STYLES */
   cursor: pointer;
