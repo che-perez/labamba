@@ -6,21 +6,21 @@ class SearchByEmail extends Component {
 		super(props)
 		console.log(this, 'is the this value')
 		console.log(this.props, 'are the props') }
-	
+
 
   	render() {
   		return(
     	<div className='searchByEmail'>
-			<form className="search-email" onSubmit={(e) => (e.preventDefault(), 
-				console.log(this.props), 
+			<form className="search-email" onSubmit={(e) => (e.preventDefault(),
+				console.log(this.props),
 				this.props.getReservationByEmail(this.props.value))} >
-				<input type="text" name="email"
+				<input className='inputSearchByReservation' type="text" name="email"
 				placeholder="Search for reservation by email here!"
 				onChange={this.props.handleInput} />
-				<input type="submit" value="Search" 
-				onClick={(e) => this.props.getReservationByEmail(e.target.value)} />  
+			<input className='inputSearchByReservationBut' type="submit" value="Search"
+				onClick={(e) => this.props.getReservationByEmail(e.target.value)} />
 			</form>
-			
+
 			{this.props.searched ? (
 				<ListedReservations allReservations={this.props.allReservations}
 				reservationStatus={this.props.reservationStatus}
@@ -34,6 +34,6 @@ class SearchByEmail extends Component {
     	</div>
   		)
 	}
-}	
+}
 
 export default SearchByEmail;

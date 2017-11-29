@@ -63,7 +63,7 @@ render(){
                }
           )}
 
-     <input type='submit' value='Reserve Now' />
+     <input type='submit' className='reserveBut' value='Reserve Now' />
    </div>
     </form>
     </div>

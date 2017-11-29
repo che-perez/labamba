@@ -105,6 +105,7 @@ class Reservation extends Component {
       .then(res => {
         this.getReservation();
 				this.getAllMesas();
+				alert(`Gracias! See you then!`);
 	  	})
 	 }
 
