@@ -58,6 +58,9 @@ body{
 .App{
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	/*align-content: center;*/
+	align-items: center;
 }
 
 .header{
@@ -185,15 +188,19 @@ margin-bottom: 12.5px;
 
 .about{
 	width: 500px;
-	margin: 0 auto;
-	background-color: rgba(119, 119, 119, 0.35);
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(119, 119, 119, .35);
 	border: 5px solid black;
+	text-shadow: 2px 2px #000000;
+	padding: 15px;
 }
 
 .about-header {
 	font-family: 'Oswald', sans-serif;
 	font-size: 36px;
 	color: white;
+	display: flex;
 	padding-bottom: 50px;
 }
 
@@ -201,19 +208,23 @@ margin-bottom: 12.5px;
 	font-family: 'Oswald', sans-serif;
 	font-size: 22px;
 	color: white;
+	display: flex;
+	align-content: flex-end;
 	line-height: 50px
 }
 
 .contact{
+	display: flex;
+	justify-content: center;
+	text-shadow: 2px 2px #000000;
+}
 
+.contact-link {
+	color: white;
 }
 
 .contactBox{
 	background-color: rgba(119, 119, 119, 0.35);
-	margin: 0 auto;
-	margin-left: 250px;
-	margin-top: 150px;
-	float: left;
 	border: 5px solid black;
 }
 .contact-header {
@@ -232,10 +243,6 @@ margin-bottom: 12.5px;
 
 .hoursBox{
 	background-color: rgba(119, 119, 119, 0.35);
-	margin: 0 auto;
-	margin-left: 150px;
-	margin-top: 150px;
-	float: right;
 	border: 5px solid black;
 	padding-right: 25px;
 }
@@ -259,7 +266,6 @@ margin-bottom: 12.5px;
 	width: 20px;
 	border-style: solid;
 	border-style: solid;
-	border-color: blue;
 	border-width: 2px;
 }
 
@@ -313,9 +319,23 @@ margin-bottom: 12.5px;
 
 }
 
-.menu{
-
+.menu {
+	display: flex;
+	justify-content: center;
+	align-content: center;
 }
+
+.pager {
+	display: flex;
+	align-content: space-between;
+	justify-content: space-between;
+}
+
+.prev-button {
+	font-size: 40px;
+	color: white;	
+}
+
 
 .tablesBoxBg{
 	display: flex;
@@ -335,6 +355,21 @@ label > input + img { /* IMAGE STYLES */
 	transform: scale(0.2);
 	margin: -62px -16px -100px -10px;
 	transition: 0.3s;
+}
+
+.next-button {
+	font-size: 40px;
+	color: white;
+}
+
+
+
+
+.footer{
+	color: white;
+	margin-top: 325px;
+	margin-left: 550px;
+/*	position: fixed;*/
 }
 
 label > input:hover + img { /* IMAGE STYLES */
