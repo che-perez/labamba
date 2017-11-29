@@ -58,6 +58,9 @@ body{
 .App{
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	/*align-content: center;*/
+	align-items: center;
 }
 
 .header{
@@ -186,10 +189,10 @@ margin-bottom: 12.5px;
 .about{
 	width: 500px;
 	display: flex;
-	justify-content: center;
-	align-content: center;
+	flex-direction: column;
 	background-color: rgba(119, 119, 119, 0.35);
 	border: 5px solid black;
+	padding: 15px;
 }
 
 .about-header {
@@ -197,7 +200,7 @@ margin-bottom: 12.5px;
 	font-size: 36px;
 	color: white;
 	display: flex;
-	justify-content: flex-start;
+	/*justify-content: flex-start;*/
 	padding-bottom: 50px;
 }
 
@@ -206,7 +209,7 @@ margin-bottom: 12.5px;
 	font-size: 22px;
 	color: white;
 	display: flex;
-	justify-content: center;
+	/*justify-content: center;*/
 	align-content: flex-end;
 	line-height: 50px
 }
