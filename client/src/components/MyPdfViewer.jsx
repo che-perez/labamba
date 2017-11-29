@@ -22,13 +22,13 @@ class MyPdfViewer extends React.Component {
   }
 
   renderPagination = (page, pages) => {
-    let previousButton = <li className="previous" onClick={this.handlePrevious}><a href="#"><i className="fa fa-arrow-left"></i> Previous</a></li>;
+    let previousButton = <li className="previous" onClick={this.handlePrevious}><a className="prev-button" href="#"><i className="fa fa-arrow-left"></i> Previous</a></li>;
     if (page === 1) {
-      previousButton = <li className="previous disabled"><a href="#"><i className="fa fa-arrow-left"></i> Previous</a></li>;
+      previousButton = <li className="previous-disabled"><a className="prev-button" href="#"><i className="fa fa-arrow-left"></i> Previous</a></li>;
     }
-    let nextButton = <li className="next" onClick={this.handleNext}><a href="#">Next <i className="fa fa-arrow-right"></i></a></li>;
+    let nextButton = <li className="next-but" onClick={this.handleNext}><a className="next-button" href="#"> Next<i className="fa fa-arrow-right"></i></a></li>;
     if (page === pages) {
-      nextButton = <li className="next disabled"><a href="#">Next <i className="fa fa-arrow-right"></i></a></li>;
+      nextButton = <li className="next-disabled"><a className="next-button" href="#">Next <i className="fa fa-arrow-right"></i></a></li>;
     }
     return (
       <nav>
@@ -47,7 +47,7 @@ class MyPdfViewer extends React.Component {
     }
     return (
       <div>
-        <PDF file={myPDF} onDocumentComplete={this.onDocumentComplete} onPageComplete={this.onPageComplete} page={this.state.page} />
+        <PDF file={myPDF} onDocumentComplete={this.onDocumentComplete} onPageComplete={this.onPageComplete} page={this.state.page} className="pdf-test"/>
         {pagination}
       </div>
     )
