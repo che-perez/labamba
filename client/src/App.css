@@ -190,7 +190,7 @@ margin-bottom: 12.5px;
 	width: 500px;
 	display: flex;
 	flex-direction: column;
-	background-color: rgba(119, 119, 119, 0.35);
+	background-color: rgba(119, 119, 119, .35);
 	border: 5px solid black;
 	padding: 15px;
 }
@@ -200,7 +200,6 @@ margin-bottom: 12.5px;
 	font-size: 36px;
 	color: white;
 	display: flex;
-	/*justify-content: flex-start;*/
 	padding-bottom: 50px;
 }
 
@@ -209,21 +208,21 @@ margin-bottom: 12.5px;
 	font-size: 22px;
 	color: white;
 	display: flex;
-	/*justify-content: center;*/
 	align-content: flex-end;
 	line-height: 50px
 }
 
 .contact{
+	display: flex;
+	justify-content: center;
+}
 
+.contact-link {
+	color: white;
 }
 
 .contactBox{
 	background-color: rgba(119, 119, 119, 0.35);
-	margin: 0 auto;
-	margin-left: 250px;
-	margin-top: 150px;
-	float: left;
 	border: 5px solid black;
 }
 .contact-header {
@@ -242,10 +241,6 @@ margin-bottom: 12.5px;
 
 .hoursBox{
 	background-color: rgba(119, 119, 119, 0.35);
-	margin: 0 auto;
-	margin-left: 150px;
-	margin-top: 150px;
-	float: right;
 	border: 5px solid black;
 	padding-right: 25px;
 }
