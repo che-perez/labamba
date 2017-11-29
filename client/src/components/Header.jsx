@@ -6,12 +6,14 @@ import SocialMedia from './SocialMedia';
 
 const Header = () => {
 	return(
-		<div className="header">
+     <div>
 			<PhoneHours />
-			<div className="logo">LaBamba Mofongo</div>
+		<div className="header">
+    <h1 className="logo">La Bamba Mofongo</h1>
 			<Nav />
-			<SocialMedia />
 		</div>
+			<SocialMedia />
+     </div>
 		)
 }
 

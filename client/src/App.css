@@ -49,55 +49,54 @@ table {
 /*Styling begins below */
 body{
 	margin: 0 auto;
-	background-image: url('./images/testImageThree.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
 }
 
 .App{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	/*align-content: center;*/
-	align-items: center;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ overflow-y: scroll;
+ width: 100vw;
+ background-image: url('./images/testImageThree.jpg');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
 }
 
-.header{
-	top: 0;
-	width: 100%;
+
+.header {
+ width: auto;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ align-content: center;
 }
 
 .nav {
-	position: relative;
-	margin-top: -7.35px;
-	margin-left: 400px;
 }
-
 .nav ul li{
-	display: inline-block;
-	padding: 3px;
-	border-style: ridge;
-	border-color: rgb(140, 103, 58);
-	border-width: 2px;
-	border-radius: 4.5px;
-	margin:1.5px;
-	color: white;
-	margin: 2px;
-	/*box-shadow: 1px 1px 8px white;*/
+ display: inline-block;
+ padding: 3px;
+ border-right: 2px solid black;
+ border-left: 2px solid black;
+ font-size: 25px;
+ font-family: helvetica;
+ text-shadow: 1px 1px 1px #000;
+ margin:1.5px;
+ color: wheat;
+ margin: 2px;
 }
 .nav ul li:hover{
-	color: red;
-	box-shadow: 2.5px 2.5px 2.5px white;
+	background-color: white;
 	transition: width 2s;
 }
 
 .logo{
-	margin-top: 20px;
-	margin-left: 275px;
 	color: beige;
 	font-family: 'Great Vibes', cursive;
-	font-size: 85px;
+	font-size: 15vmin;
 	text-shadow: 1px 0px 1px  black;
 	font-weight:200;
 }
@@ -110,22 +109,19 @@ span{
 	line-height: .9;
 	height: 0px;
 	width: 200px;
-	border-style: solid;
+	position: absolute;
+    top: 0;
 	color:white;
 }
 
 .social-media{
-	float: right;
-	top: -52px;
-	position: absolute;
-	margin-left: 85%;
+ position: absolute;
+ top: 0;
+ left: 80%;
 }
 .sm-icon{
 	transform: scale(.2);
-	border-style: solid;
-	border-style: solid;
 	outline: none;
-	border-width: 2px;
 }
 
 .smLink{
